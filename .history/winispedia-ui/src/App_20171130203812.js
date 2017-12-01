@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Header } from './components';
+import { TeamLogo, Wins, Ties, WinLossBar, Streak } from './../subcomponents/header';
 
 import './App.css';
 
