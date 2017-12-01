@@ -2,9 +2,15 @@ import React, { Component } from 'react';
 
 export default class TeamLogo extends Component {
 
+  static defaultProps = {
+    slug: "georgia-tech",
+    schoolName: "Georgia Tech",
+  }
+
+  const testName = "ryan";
+  
   constructor(){
     super(props);
-
   }
   
   render() {
