@@ -11,22 +11,23 @@ export default class App extends Component {
         "team": {
           "SchoolName": "Georgia Tech",
           "SchoolSlug": "georgia-tech",
-          "MatchupSlug": "georgia",
+          "MatchupSlug": "alabama",
           "Branding": {
             "HexColor": "#b39454"
           },
           "Matchup": {
-            "Wins": 41,
-            "Ties": 5,
-            "Losses": 65,
+            "Wins": 21,
+            "Ties": 3,
+            "Losses": 28,
+            "WinPercent": 0.43269230769231,
             "MatchupTeam": {
-              "SchoolName": "Georgia",
+              "SchoolName": "Alabama",
               "Branding": {
-                "HexColor": "#CC0000"
+                "HexColor": "#a32136"
               },
               "Matchup": {
-                "Wins": 65,
-                "Ties": 5
+                "Wins": 28,
+                "WinPercent": 0.56730769230769
               }
             }
           }

@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 export class TeamLogo extends Component {
-  
-  componentWillMount(){
-    console.log(this.props)
-  }
 
   render() {
     return (
