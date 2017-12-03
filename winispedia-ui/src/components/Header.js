@@ -3,15 +3,11 @@ import { TeamLogo } from '../subcomponents/header';
 
 export class Header extends Component {     
 
-    static defaultProps = {
-        slug: "georgia-tech",
-        schoolName: "Georgia Tech",
-    }
-
     render() {
         return (
             <div>
-                <TeamLogo/>
+                <TeamLogo slug={this.props.matchUpData.data.team.SchoolSlug}/>
+                <TeamLogo slug={this.props.matchUpData.data.team.MatchupSlug}/>
             </div>
         )
     }
