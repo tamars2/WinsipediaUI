@@ -1,44 +1,36 @@
 import React, { Component } from 'react';
 
+import GraphGrid from "./GraphGrid.js"
+import TiesBar from "./TiesBar.js"
+import SchoolWinsBar from "./SchoolWinsBar.js"
+import MatchupSchoolWinsBar from "./MatchupSchoolWinsBar.js"
+
 export class WinLossBar extends Component {
 	
 	componentWillMount(){
-		const grid = {
-			display: "grid",
-			"gridTemplateColumns": (this.props.schoolWins / (this.props.schoolWins + this.props.ties + this.props.matchupWins))*100 + "% " + (this.props.ties / (this.props.schoolWins + this.props.ties + this.props.matchupWins))*100 + "% " + (this.props.matchupWins / (this.props.schoolWins + this.props.ties + this.props.matchupWins))*100 + "%",
-			"gridTemplateRows": "2em",			
-		}
-
-		const schoolWins = {
-			gridArea: "1 1",
-			background: this.props.schoolColor,			
-		}
-
-		const ties = {
-			gridArea: "1 2",			
-			background: "#bbb",			
-		}
-
-		const matchupWins = {
-			gridArea: "1 3",			
-			background: this.props.matchupSchoolColor,			
-		}
+		let totalGames = (this.props.schoolWins + this.props.ties + this.props.matchupWins)
+		let schoolWinPercent = (this.props.schoolWins / totalGames)*100
+		let TiesPercent = (this.props.ties / totalGames)*100
+		let matchupSchoolWinPercent = (this.props.matchupWins / totalGames)*100
+		let schoolColor = this.props.schoolColor
+		let matchupSchoolColor = this.props.matchupSchoolColor
 
 		this.setState({
-			grid: grid,
-			schoolWins: schoolWins,
-			ties: ties,
-			matchupWins: matchupWins,
+			schoolWinPercent: schoolWinPercent,
+			TiesPercent: TiesPercent,
+			matchupSchoolWinPercent: matchupSchoolWinPercent,
+			schoolColor: schoolColor,
+			matchupSchoolColor: matchupSchoolColor,
 		});
 	}  
 
   render() {
     return (
-			<div style={this.state.grid}>
-				<div style={this.state.schoolWins}></div>
-				<div style={this.state.ties}></div>
-				<div style={this.state.matchupWins}></div>
-			</div>
+			<GraphGrid schoolWinPercent={this.state.schoolWinPercent} tiesPercent = {this.state.TiesPercent} matchupSchoolWinPercent = {this.state.matchupSchoolWinPercent}>
+				<SchoolWinsBar schoolColor={this.state.schoolColor}></SchoolWinsBar>
+				<TiesBar></TiesBar>
+				<MatchupSchoolWinsBar matchupSchoolColor={this.state.matchupSchoolColor}></MatchupSchoolWinsBar>
+			</GraphGrid>
     )
   }
 
