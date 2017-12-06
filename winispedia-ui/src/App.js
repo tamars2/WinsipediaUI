@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Header } from './components';
+import { DottedLine } from './subcomponents/common/DottedLine';
+
 
 import './App.css';
 
@@ -75,7 +77,10 @@ export default class App extends Component {
       //     </div>                             
       //   </div>
       // </div>
+      <div>
         <Header matchUpData={this.state}/>
+        <DottedLine/>
+      </div>
 
     );
   }
