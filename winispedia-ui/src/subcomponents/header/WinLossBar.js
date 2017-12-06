@@ -9,18 +9,13 @@ export class WinLossBar extends Component {
 	
 	componentWillMount(){
 		let totalGames = (this.props.schoolWins + this.props.ties + this.props.matchupWins)
-		let schoolWinPercent = (this.props.schoolWins / totalGames)*100
-		let TiesPercent = (this.props.ties / totalGames)*100
-		let matchupSchoolWinPercent = (this.props.matchupWins / totalGames)*100
-		let schoolColor = this.props.schoolColor
-		let matchupSchoolColor = this.props.matchupSchoolColor
-
+		
 		this.setState({
-			schoolWinPercent: schoolWinPercent,
-			TiesPercent: TiesPercent,
-			matchupSchoolWinPercent: matchupSchoolWinPercent,
-			schoolColor: schoolColor,
-			matchupSchoolColor: matchupSchoolColor,
+			schoolWinPercent: (this.props.schoolWins / totalGames)*100,
+			TiesPercent: (this.props.ties / totalGames)*100,
+			matchupSchoolWinPercent: (this.props.matchupWins / totalGames)*100,
+			schoolColor: this.props.schoolColor,
+			matchupSchoolColor: this.props.matchupSchoolColor,
 		});
 	}  
 
