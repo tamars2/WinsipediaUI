@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import GraphGrid from "./GraphGrid.js"
+import WinLossBarGrid from "./WinLossBarGrid.js"
 import TiesBar from "./TiesBar.js"
 import SchoolWinsBar from "./SchoolWinsBar.js"
 import MatchupSchoolWinsBar from "./MatchupSchoolWinsBar.js"
@@ -21,11 +21,11 @@ export class WinLossBar extends Component {
 
   render() {
     return (
-			<GraphGrid schoolWinPercent={this.state.schoolWinPercent} tiesPercent = {this.state.TiesPercent} matchupSchoolWinPercent = {this.state.matchupSchoolWinPercent}>
+			<WinLossBarGrid schoolWinPercent={this.state.schoolWinPercent} tiesPercent = {this.state.TiesPercent} matchupSchoolWinPercent = {this.state.matchupSchoolWinPercent}>
 				<SchoolWinsBar schoolColor={this.state.schoolColor}></SchoolWinsBar>
 				<TiesBar></TiesBar>
 				<MatchupSchoolWinsBar matchupSchoolColor={this.state.matchupSchoolColor}></MatchupSchoolWinsBar>
-			</GraphGrid>
+			</WinLossBarGrid>
     )
   }
 

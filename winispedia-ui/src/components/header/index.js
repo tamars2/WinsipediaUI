@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
-import { TeamLogo } from '../subcomponents/header';
-import { Ties } from '../subcomponents/header';
-import { Wins } from '../subcomponents/header';
-import {WinLossBar} from '../subcomponents/header'
+import { TeamLogo } from '../../subcomponents/header';
+import { Ties } from '../../subcomponents/header';
+import { Wins } from '../../subcomponents/header';
+import {WinLossBar} from '../../subcomponents/header';
+import HeaderGrid from "./HeaderGrid.js";
+import SchoolLogoPosition from "./SchoolLogoPosition.js";
+import SchoolWinsPosition from "./SchoolWinsPosition.js";
+import TiesPosition from "./TiesPosition.js";
+import MatchupSchoolWinsPosition from "./MatchupSchoolWinsPosition.js";
+import MatchupSchoolLogoPosition from "./MatchupSchoolLogoPosition.js";
+import WinLossBarPosition from "./WinLossBarPosition.js";
 
 
 
@@ -24,24 +31,35 @@ export class Header extends Component {
  
     render() {
         return (
-            <div className="header">
+            <HeaderGrid>
+                <SchoolLogoPosition>
                 <TeamLogo 
                     slug={this.state.schoolSlug}
                 />
+                </SchoolLogoPosition>
+                <SchoolWinsPosition>
                 <Wins 
                     wins={this.state.schoolWins} 
                     percent={this.state.schoolWinPercent}
                 />
+                </SchoolWinsPosition>
+                <TiesPosition>
                 <Ties 
                     ties={this.state.schoolTies}
                 />
+                </TiesPosition>
+                <MatchupSchoolWinsPosition>
                 <Wins 
                     wins={this.state.matchupSchoolWins} 
                     percent={this.state.matchupSchoolWinPercent}
                 />
+                </MatchupSchoolWinsPosition>
+                <MatchupSchoolLogoPosition>
                 <TeamLogo 
                     slug={this.state.matchupSchoolSlug}
                 />
+                </MatchupSchoolLogoPosition>
+                <WinLossBarPosition>
                 <WinLossBar 
                     schoolColor={this.state.schoolColor} 
                     matchupSchoolColor={this.state.matchupSchoolColor} 
@@ -49,7 +67,8 @@ export class Header extends Component {
                     ties={this.state.schoolTies} 
                     matchupWins={this.state.matchupSchoolWins}
                 />
-            </div>
+                </WinLossBarPosition>
+            </HeaderGrid>
         )
     }
 
