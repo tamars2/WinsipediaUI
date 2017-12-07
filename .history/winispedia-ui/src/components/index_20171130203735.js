@@ -1,1 +1,0 @@
-export TeamLogo from './TeamLogo';
