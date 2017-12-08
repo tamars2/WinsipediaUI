@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export default styled.div`
 	display: grid;
-	grid-template-columns: 17% 22% 22% 22% 17%;
-	grid-template-rows: 120px 50px 50px 50px;
-	color: #595e60;
+	grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+	grid-template-rows: 15vw 5vw 0vw 5vw;
 `;

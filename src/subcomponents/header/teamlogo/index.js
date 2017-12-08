@@ -6,7 +6,7 @@ export class TeamLogo extends Component {
 
   render() {
     return (
-        <TeamLogoGrid className="teamLogo" src={require('../../../public/images/Team_logos/' + this.props.slug + '.120.png')} alt="Georgia Tech"></TeamLogoGrid>
+        <TeamLogoGrid className="teamLogo" src={require('../../../public/images/Team_logos/' + this.props.slug + '.240.png')} alt={this.props.school}></TeamLogoGrid>
     )
   }
 

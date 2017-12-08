@@ -5,5 +5,5 @@ export default styled.div`
 	grid-row-end: 3;
 	grid-column: 5;		
 	align-self: center;
-	text-align: center;
+
 `;
