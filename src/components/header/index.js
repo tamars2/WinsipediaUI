@@ -26,6 +26,8 @@ export class Header extends Component {
             matchupSchoolWins: this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins,
             matchupSchoolWinPercent: this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinPercent,
             matchupSchoolColor: this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor,
+            school: this.props.matchUpData.data.team.SchoolName,
+            matchupSchool: this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName,
         })
     }     
  
@@ -35,6 +37,7 @@ export class Header extends Component {
                 <SchoolLogoPosition>
                 <TeamLogo 
                     slug={this.state.schoolSlug}
+                    school={this.state.school}
                 />
                 </SchoolLogoPosition>
                 <SchoolWinsPosition>
@@ -57,6 +60,7 @@ export class Header extends Component {
                 <MatchupSchoolLogoPosition>
                 <TeamLogo 
                     slug={this.state.matchupSchoolSlug}
+                    school={this.state.matchupSchool}
                 />
                 </MatchupSchoolLogoPosition>
                 <WinLossBarPosition>
