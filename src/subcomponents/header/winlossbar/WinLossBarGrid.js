@@ -7,5 +7,5 @@ export default styled.div`
 			props.schoolWinPercent + "%" + props.tiesPercent + "%" + props.matchupSchoolWinPercent + "%"
 		)
 	};
-	grid-template-rows: 6vw;
+	grid-template-rows: 7vw;
 `;
