@@ -50,7 +50,7 @@ export default class App extends Component {
       <div>
         <Header matchUpData={this.state}/>
         <DottedLine/>
-        <Footer/>
+        <Footer matchUpData={this.state}/>
       </div>
 
     );
