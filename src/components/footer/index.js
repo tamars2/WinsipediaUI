@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-// import { MatchupLink } from '../../subcomponents/footer';
 import { Trademark } from '../../subcomponents/footer';
-import { Wordmark } from '../../subcomponents/footer/wordmark/index';
-import { MatchupLink } from '../../subcomponents/footer/matchuplink/index';
-// import { Wordmark } from '../../subcomponents/footer';
+import { Wordmark } from '../../subcomponents/footer';
+import { MatchupLink } from '../../subcomponents/footer';
+import FooterGrid from "./FooterGrid.js";
+import TrademarkPosition from "./TrademarkPosition.js";
+
+
 
 export class Footer extends Component {
     componentWillMount(){
@@ -16,14 +18,13 @@ export class Footer extends Component {
  
     render() {
         return (
-					<div>
-            <Trademark>
-
-            </Trademark>
-						<Wordmark/>
-						<MatchupLink schoolSlug={this.state.schoolSlug} matchupSchoolSlug={this.state.matchupSchoolSlug}
-/>
-					</div>
+			<FooterGrid>
+				<TrademarkPosition>
+        	<Trademark/>
+				</TrademarkPosition>
+				<Wordmark/>
+				<MatchupLink schoolSlug={this.state.schoolSlug} matchupSchoolSlug={this.state.matchupSchoolSlug}/>
+			</FooterGrid>
         )
     }
 
