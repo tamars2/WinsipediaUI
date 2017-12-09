@@ -7,7 +7,7 @@ export class Wordmark extends Component {
   render() {
     return (
         <WordmarkGrid
-					src={require('../../../public/branding/wordmark.png')} alt="Winsipedia Trademark"
+					src={require('../../../media/branding/wordmark.png')} alt="Winsipedia Trademark"
 				/>
     )
   }

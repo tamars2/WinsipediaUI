@@ -7,7 +7,7 @@ export class Trademark extends Component {
   render() {
     return (
         <TrademarkGrid
-				src={require('../../../public/branding/Winsipedia.90.png')} alt="Winsipedia Trademark"
+				src={require('../../../media/branding/Winsipedia.90.png')} alt="Winsipedia Trademark"
 				/>
     )
   }
