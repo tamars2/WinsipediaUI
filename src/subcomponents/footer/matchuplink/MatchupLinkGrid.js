@@ -3,5 +3,7 @@ import styled from "styled-components";
 export default styled.a`
 	align-self: center;
 	display: block;
-	width: 20vw;
+	font-family: 'Gudea', sans-serif;
+	font-size: 10px;
+	font-weight: 535;
 `;

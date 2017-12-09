@@ -5,4 +5,5 @@ export default styled.div`
 	grid-column-start: 1;
 	grid-column-end: 6;		
 	align-self: center;
+	margin-top: 6%;
 `;

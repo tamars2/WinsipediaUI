@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
 export default styled.div`
-	grid-row: 3;
-	grid-column-start: 2;
-	grid-column-end: 5;		
+	grid-row: 0;
+	grid-column: 1;		
 	align-self: center;
-	margin-top: -5%
 
 `;
