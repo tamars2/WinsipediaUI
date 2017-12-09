@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Header } from './components';
+import { Footer } from './components';
 import { DottedLine } from './subcomponents/common/DottedLine';
 
 
@@ -21,7 +22,12 @@ export default class App extends Component {
             "Wins": 21,
             "Ties": 3,
             "Losses": 28,
+            "WinStreakSchool": "Georgia Tech",
+            "WinStreak": 1,
+            "WinStreakYears": "1984",
+            "WinStreakSchoolColor": "#b39454",
             "WinPercent": 0.43269230769231,
+            
             "MatchupTeam": {
               "SchoolName": "Alabama",
               "Branding": {
@@ -41,45 +47,10 @@ export default class App extends Component {
   render() {
   
     return (
-      // <div className="container">
-      //   <div className="card">
-      //     <div className="header">
-      //       <img className="team1Logo" src={require(`../public/images/Team_logos/${team1}.120.png`)} alt="">
-      //       </img>
-      //       <img className="team2Logo" src={require(`../public/images/Team_logos/${team2}.120.png`)} alt="">
-      //       </img>
-      //       {/* <div>{team1}</div>
-      //       <div>{team2}</div> */}
-      //     </div>
-      //     <div id="dotted-line"></div>
-      //     <div className="records">
-      //       RECORDS HERE
-      //     </div>
-      //     <div id="dotted-line"></div>
-      //     <div className="national-championships">
-      //       NATIONAL CHAMPIONSHIPS HERE
-      //     </div>
-      //     <div id="dotted-line"></div>
-      //     <div className="conference-championships">
-      //       CONFERENCE CHAMPIONSHIPS HERE
-      //     </div>
-      //     <div id="dotted-line"></div>
-      //     <div className="bowl-games">
-      //       BOWL GAMES HERE
-      //     </div>
-      //     <div id="dotted-line"></div>          
-      //     <div className="wins-alltime">
-      //       WINS ALL TIME HERE
-      //     </div>
-      //     <div id="dotted-line"></div>          
-      //     <div className="links">
-      //       LINKS HERE
-      //     </div>                             
-      //   </div>
-      // </div>
       <div>
         <Header matchUpData={this.state}/>
         <DottedLine/>
+        <Footer matchUpData={this.state}/>
       </div>
 
     );

@@ -3,6 +3,7 @@ import { TeamLogo } from '../../subcomponents/header';
 import { Ties } from '../../subcomponents/header';
 import { Wins } from '../../subcomponents/header';
 import {WinLossBar} from '../../subcomponents/header';
+import {WinStreak} from '../../subcomponents/header';
 import HeaderGrid from "./HeaderGrid.js";
 import SchoolLogoPosition from "./SchoolLogoPosition.js";
 import SchoolWinsPosition from "./SchoolWinsPosition.js";
@@ -10,6 +11,7 @@ import TiesPosition from "./TiesPosition.js";
 import MatchupSchoolWinsPosition from "./MatchupSchoolWinsPosition.js";
 import MatchupSchoolLogoPosition from "./MatchupSchoolLogoPosition.js";
 import WinLossBarPosition from "./WinLossBarPosition.js";
+import WinStreakPosition from "./WinStreakPosition.js";
 
 
 
@@ -28,6 +30,11 @@ export class Header extends Component {
             matchupSchoolColor: this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor,
             school: this.props.matchUpData.data.team.SchoolName,
             matchupSchool: this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName,
+            winStreak: this.props.matchUpData.data.team.Matchup.WinStreak,
+            winStreakSchool: this.props.matchUpData.data.team.Matchup.WinStreakSchool,
+            winStreakSchoolColor: this.props.matchUpData.data.team.Matchup.WinStreakSchoolColor,
+            winStreakYears: this.props.matchUpData.data.team.Matchup.WinStreakYears,
+            
         })
     }     
  
@@ -72,6 +79,14 @@ export class Header extends Component {
                     matchupWins={this.state.matchupSchoolWins}
                 />
                 </WinLossBarPosition>
+                <WinStreakPosition>
+                <WinStreak
+                winStreak={this.state.winStreak} 
+                winStreakSchool={this.state.winStreakSchool} 
+                winStreakYears={this.state.winStreakYears} 
+                winStreakSchoolColor={this.state.winStreakSchoolColor}                
+                />
+                </WinStreakPosition>
             </HeaderGrid>
         )
     }
