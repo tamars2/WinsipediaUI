@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 
-export class DottedLine extends Component {
-	componentWillMount(){
-		const dottedLine = {
-			borderBottom: "dashed 1px #c3c3c3",
-			marginTop: "10px",
-			marginBottom: "10px",
-		}
+import DottedLineStyle from './DottedLineStyle.js';
 
-		this.setState({
-			dottedLine: dottedLine
-		});
-	} 
+export class DottedLine extends Component {
   render() {
     return (
-        <div style={this.state.dottedLine}></div>
+			<DottedLineStyle/>
     )
   }
-
 }

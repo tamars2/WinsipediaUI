@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
-import MatchupStyle from './MatchupStyle.js';
-
 import { ViewContainerFrame } from '../../components';
 import { MatchupHeader } from '../../../components';
 import { MatchupFooter } from '../../../components';
-import { DottedLine } from '../../../subcomponents/common/DottedLine.js'
 
 export class Matchup extends Component {
   constructor(props) {
