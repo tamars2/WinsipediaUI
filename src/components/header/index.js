@@ -15,7 +15,7 @@ import WinStreakPosition from "./WinStreakPosition.js";
 
 
 
-export class Header extends Component {
+export class MatchupHeader extends Component {
     componentWillMount(){
         console.log(this.props)
         this.setState({

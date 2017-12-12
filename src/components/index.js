@@ -1,4 +1,4 @@
-export { Header } from './header';
-export { Footer } from './footer';
-export { Container} from './container';
+export { MatchupHeader } from './header';
+export { MatchupFooter } from './footer';
+export { ViewContainer} from './container';
 

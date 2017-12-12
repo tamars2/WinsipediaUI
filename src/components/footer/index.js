@@ -8,7 +8,7 @@ import TrademarkPosition from "./TrademarkPosition.js";
 
 
 
-export class Footer extends Component {
+export class MatchupFooter extends Component {
     componentWillMount(){
         this.setState({
             schoolSlug: this.props.matchUpData.data.team.SchoolSlug,

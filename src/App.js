@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import { Container } from './components';
+import { Matchup } from './react/views';
 
 export default class App extends Component {
   render() {
     return (
-      <Container/>
+      <Matchup/>
     );
   }
 }
