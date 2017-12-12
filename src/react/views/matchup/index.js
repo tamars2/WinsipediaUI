@@ -48,11 +48,8 @@ export class Matchup extends Component {
 	render() {
 		return (
       <ViewContainerFrame>
-        <MatchupStyle>
-          <MatchupHeader matchUpData = {this.state}/>
-          <DottedLine/>	
-          <MatchupFooter matchUpData = {this.state}/>
-        </MatchupStyle>  
+        <MatchupHeader matchUpData = {this.state}/>
+        <MatchupFooter matchUpData = {this.state}/>
       </ViewContainerFrame>
 		)
 	}
