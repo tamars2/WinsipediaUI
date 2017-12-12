@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 
-import MatchupLinkGrid from "./MatchupLinkGrid.js";
+import MatchupLinkStyle from "./MatchupLinkStyle.js";
 
 export class MatchupLink extends Component {
 
   render() {
     return (
-        <MatchupLinkGrid 
+        <MatchupLinkStyle 
 				href={"http://www.winsipedia.com/" + this.props.schoolSlug + "/vs/" + this.props.matchupSchoolSlug}>
 				Full Matchup Page >
-				</MatchupLinkGrid>
+				</MatchupLinkStyle>
     )
   }
 
