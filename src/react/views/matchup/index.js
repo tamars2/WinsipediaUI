@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 
 import MatchupStyle from './MatchupStyle.js';
 
-import { ViewContainer } from '../../components';
-import { ViewContainerFrame } from '../../subcomponents';
+import { ViewContainerFrame } from '../../components';
 import { MatchupHeader } from '../../../components';
 import { MatchupFooter } from '../../../components';
 import { DottedLine } from '../../../subcomponents/common/DottedLine.js'

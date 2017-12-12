@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import ViewContainerFrameStyle from './ViewContainerFrameStyle.js';
-import {ViewContainerBackground} from '../'
+import {ViewContainerBackground} from '../../subcomponents'
 
 export class ViewContainerFrame extends Component {
 

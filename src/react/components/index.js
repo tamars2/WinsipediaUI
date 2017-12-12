@@ -1,1 +1,1 @@
-export { ViewContainer } from './viewcontainer/';
+export { ViewContainerFrame } from './viewcontainerframe/';
