@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TeamLogo } from '../../subcomponents/header';
+import { TeamLogo } from '../../react/subcomponents/';
 import { Ties } from '../../subcomponents/header';
 import { Wins } from '../../subcomponents/header';
 import {WinLossBar} from '../../subcomponents/header';
