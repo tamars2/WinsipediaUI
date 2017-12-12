@@ -4,14 +4,13 @@ import { Ties } from '../../subcomponents/header';
 import { Wins } from '../../subcomponents/header';
 import {WinLossBar} from '../../subcomponents/header';
 import {WinStreak} from '../../subcomponents/header';
-import { DottedLine } from '../../subcomponents/common/DottedLine.js';
+import { DottedLine } from '../../react/subcomponents/';
 import HeaderGrid from "./HeaderGrid.js";
 import SchoolLogoPosition from "./SchoolLogoPosition.js";
 import SchoolWinsPosition from "./SchoolWinsPosition.js";
 import TiesPosition from "./TiesPosition.js";
 import MatchupSchoolWinsPosition from "./MatchupSchoolWinsPosition.js";
 import DottedLinePosition from "./DottedLinePosition.js";
-
 import MatchupSchoolLogoPosition from "./MatchupSchoolLogoPosition.js";
 import WinLossBarPosition from "./WinLossBarPosition.js";
 import WinStreakPosition from "./WinStreakPosition.js";
