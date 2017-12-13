@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
 
-import ViewContainerBackgroundStyle from './ViewContainerBackgroundStyle.js';
+const ViewContainerBackgrounds = styled.div`
+	background: rgb(235,235,235);
+	height: 100%;
+	padding: 10px;
+`
 
 export class ViewContainerBackground extends Component {
   render(props) {
     return (
-      <ViewContainerBackgroundStyle>
+      <ViewContainerBackgrounds>
         {this.props.children}
-      </ViewContainerBackgroundStyle>
+      </ViewContainerBackgrounds>
     )
   }
 }
