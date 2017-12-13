@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-import { Trademark } from '../../subcomponents/footer';
 import { MatchupLink } from '../../react/subcomponents/';
 import { Wordmark } from '../../react/subcomponents/';
 
-import FooterGrid from "./FooterGrid.js";
-import TrademarkPosition from "./TrademarkPosition.js";
+import FooterStyle from "./FooterStyle.js";
 
 
 
@@ -19,12 +17,12 @@ export class MatchupFooter extends Component {
  
     render() {
         return (
-			<FooterGrid>
-				<TrademarkPosition>
+			<FooterStyle>
+				<div>
                     <Wordmark/>
-				</TrademarkPosition>
+				</div>
 				<MatchupLink schoolSlug={this.state.schoolSlug} matchupSchoolSlug={this.state.matchupSchoolSlug}/>
-			</FooterGrid>
+			</FooterStyle>
         )
     }
 
