@@ -1,21 +1,23 @@
 import React, { Component } from 'react';
-import { TeamLogo } from '../../subcomponents/header';
+import { TeamLogo } from '../../react/subcomponents/';
 import { Ties } from '../../subcomponents/header';
 import { Wins } from '../../subcomponents/header';
 import {WinLossBar} from '../../subcomponents/header';
 import {WinStreak} from '../../subcomponents/header';
+import { DottedLine } from '../../react/subcomponents/';
 import HeaderGrid from "./HeaderGrid.js";
 import SchoolLogoPosition from "./SchoolLogoPosition.js";
 import SchoolWinsPosition from "./SchoolWinsPosition.js";
 import TiesPosition from "./TiesPosition.js";
 import MatchupSchoolWinsPosition from "./MatchupSchoolWinsPosition.js";
+import DottedLinePosition from "./DottedLinePosition.js";
 import MatchupSchoolLogoPosition from "./MatchupSchoolLogoPosition.js";
 import WinLossBarPosition from "./WinLossBarPosition.js";
 import WinStreakPosition from "./WinStreakPosition.js";
 
 
 
-export class Header extends Component {
+export class MatchupHeader extends Component {
     componentWillMount(){
         console.log(this.props)
         this.setState({
@@ -87,6 +89,9 @@ export class Header extends Component {
                 winStreakSchoolColor={this.state.winStreakSchoolColor}                
                 />
                 </WinStreakPosition>
+                <DottedLinePosition>
+                <DottedLine/>
+                </DottedLinePosition>
             </HeaderGrid>
         )
     }

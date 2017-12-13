@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export default styled.div`
-	grid-row: 0;
-	grid-column: 1;		
-	align-self: center;
+	background: rgb(235,235,235);
+	height: 100%;
+	padding: 10px;
 
 `;

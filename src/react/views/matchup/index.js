@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-import { Header } from '../';
-import { Footer } from '../';
-import ContainerFrame from './ContainerFrame.js';
-import ContainerBackground from './ContainerBackground.js';
-import { DottedLine } from '../../subcomponents/common/DottedLine.js'
+import { ViewContainerFrame } from '../../components';
+import { MatchupHeader } from '../../../components';
+import { MatchupFooter } from '../../components';
 
-export class Container extends Component {
+export class Matchup extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -44,19 +42,13 @@ export class Container extends Component {
     }
   }
  
-
-
-    render() {
-        return (
-			<ContainerBackground>
-			<ContainerFrame>
-				<Header matchUpData={this.state}/>
-				<DottedLine/>
-				<Footer matchUpData={this.state}/>
-			</ContainerFrame>	
-			</ContainerBackground>
-        )
-    }
-
+	render() {
+		return (
+      <ViewContainerFrame>
+        <MatchupHeader matchUpData = {this.state}/>
+        <MatchupFooter matchUpData = {this.state}/>
+      </ViewContainerFrame>
+		)
+	}
 }
 

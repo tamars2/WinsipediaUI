@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 
-import { Trademark } from '../../subcomponents/footer';
-import { Wordmark } from '../../subcomponents/footer';
-import { MatchupLink } from '../../subcomponents/footer';
-import FooterGrid from "./FooterGrid.js";
-import TrademarkPosition from "./TrademarkPosition.js";
+import { MatchupLink } from '../../subcomponents/';
+import { Wordmark } from '../../subcomponents/';
 
+import FooterStyle from "./FooterStyle.js";
 
-
-export class Footer extends Component {
+export class MatchupFooter extends Component {
     componentWillMount(){
         this.setState({
             schoolSlug: this.props.matchUpData.data.team.SchoolSlug,
@@ -18,13 +15,10 @@ export class Footer extends Component {
  
     render() {
         return (
-			<FooterGrid>
-				<TrademarkPosition>
-        	<Trademark/>
-				</TrademarkPosition>
-				<Wordmark/>
+			<FooterStyle>
+                <Wordmark/>
 				<MatchupLink schoolSlug={this.state.schoolSlug} matchupSchoolSlug={this.state.matchupSchoolSlug}/>
-			</FooterGrid>
+			</FooterStyle>
         )
     }
 
