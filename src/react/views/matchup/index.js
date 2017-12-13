@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { ViewContainerFrame } from '../../components';
 import { MatchupHeader } from '../../../components';
-import { MatchupFooter } from '../../../components';
+import { MatchupFooter } from '../../components';
 
 export class Matchup extends Component {
   constructor(props) {

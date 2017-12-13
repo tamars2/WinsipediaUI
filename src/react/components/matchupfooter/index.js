@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 
-import { MatchupLink } from '../../react/subcomponents/';
-import { Wordmark } from '../../react/subcomponents/';
+import { MatchupLink } from '../../subcomponents/';
+import { Wordmark } from '../../subcomponents/';
 
 import FooterStyle from "./FooterStyle.js";
-
-
 
 export class MatchupFooter extends Component {
     componentWillMount(){
