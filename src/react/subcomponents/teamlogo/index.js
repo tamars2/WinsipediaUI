@@ -10,7 +10,7 @@ export class TeamLogo extends Component {
 
   render() {
     return (
-        <TeamLogos src={require('../../../media/images/team_logos/' + this.props.slug + '.240.png')} alt={this.props.school}></TeamLogos>
+        <TeamLogos src={require('../../../media/images/Team_logos/' + this.props.slug + '.240.png')} alt={this.props.school}></TeamLogos>
     )
   }
 
