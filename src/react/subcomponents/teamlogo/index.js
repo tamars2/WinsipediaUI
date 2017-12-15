@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
 
-import TeamLogoStyle from "./TeamLogoStyle.js";
-
+const TeamLogos = styled.img`
+	align-self: center;
+	display: block;
+	width: 95%;
+`
 export class TeamLogo extends Component {
 
   render() {
     return (
-        <TeamLogoStyle src={require('../../../media/images/team_logos/' + this.props.slug + '.240.png')} alt={this.props.school}></TeamLogoStyle>
+        <TeamLogos src={require('../../../media/images/team_logos/' + this.props.slug + '.240.png')} alt={this.props.school}></TeamLogos>
     )
   }
 

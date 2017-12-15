@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import styled from "styled-components";
 
-import DottedLineStyle from './DottedLineStyle.js';
+const DottedLines = styled.div`
+			border-bottom: dashed 1px #c3c3c3;
+			margin-top: 10px;
+			margin-bottom: 10px;
+`
 
 export class DottedLine extends Component {
   render() {
     return (
-			<DottedLineStyle/>
+			<DottedLines/>
     )
   }
 }
