@@ -1,2 +1,0 @@
-export { MatchupHeader } from './header';
-

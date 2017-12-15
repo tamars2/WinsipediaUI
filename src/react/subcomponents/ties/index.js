@@ -30,7 +30,6 @@ font-family: 'Gudea', sans-serif;
 `;
 
 export class Ties extends Component {
-
   render() {
     return (
       <Wrapper>
@@ -39,5 +38,4 @@ export class Ties extends Component {
       </Wrapper>
     )
   }
-
 }
