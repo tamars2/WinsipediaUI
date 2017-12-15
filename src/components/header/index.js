@@ -90,7 +90,7 @@ export class MatchupHeader extends Component {
                 />
                 </WinStreakPosition>
                 <DottedLinePosition>
-                <DottedLine/>
+                <DottedLine bold/>
                 </DottedLinePosition>
             </HeaderGrid>
         )
