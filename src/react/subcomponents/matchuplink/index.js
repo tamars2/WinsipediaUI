@@ -5,7 +5,7 @@ const MatchupLinks = styled.a`
 	align-self: center;
 	display: block;
 	font-family: 'Gudea', sans-serif;
-	font-size: 20px;
+	font-size: 3vw;
 	font-weight: 535;
 `
 

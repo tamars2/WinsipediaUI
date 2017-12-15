@@ -1,21 +1,76 @@
 import React, { Component } from 'react';
-import { TeamLogo } from '../../react/subcomponents/';
-import { Ties } from '../../subcomponents/header';
-import { Wins } from '../../subcomponents/header';
-import {WinLossBar} from '../../subcomponents/header';
-import {WinStreak} from '../../subcomponents/header';
-import { DottedLine } from '../../react/subcomponents/';
-import HeaderGrid from "./HeaderGrid.js";
-import SchoolLogoPosition from "./SchoolLogoPosition.js";
-import SchoolWinsPosition from "./SchoolWinsPosition.js";
-import TiesPosition from "./TiesPosition.js";
-import MatchupSchoolWinsPosition from "./MatchupSchoolWinsPosition.js";
-import DottedLinePosition from "./DottedLinePosition.js";
-import MatchupSchoolLogoPosition from "./MatchupSchoolLogoPosition.js";
-import WinLossBarPosition from "./WinLossBarPosition.js";
-import WinStreakPosition from "./WinStreakPosition.js";
+import styled from "styled-components";
 
+import { TeamLogo } from '../../subcomponents/';
+import { Ties } from '../../subcomponents/';
+import { Wins } from '../../subcomponents/';
+import {WinLossBar} from '../../subcomponents/';
+import {WinStreak} from '../../subcomponents/';
+import { DottedLine } from '../../subcomponents/';
 
+const Wrapper = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows: 100% 100% 100% 100% 100%;
+`;
+
+const SchoolLogoPosition = styled.div`
+grid-row-start: 1;
+grid-row-end: 3;
+grid-column: 1;		
+align-self: center;
+`;
+
+const SchoolWinsPosition = styled.div`
+grid-row-start: 1;
+grid-row-end: 3;
+grid-column: 2;		
+align-self: center;
+`;
+
+const TiesPosition = styled.div`
+grid-row-start: 1;
+grid-row-end: 3;
+grid-column: 3;		
+align-self: center;
+`;
+
+const MatchupSchoolWinsPosition = styled.div`
+grid-row-start: 1;
+grid-row-end: 3;
+grid-column: 4;			
+align-self: center;
+`;
+
+const MatchupSchoolLogoPosition = styled.div`
+grid-row-start: 1;
+grid-row-end: 3;
+grid-column: 5;		
+align-self: center;
+`;
+
+const DottedLinePosition = styled.div`
+grid-column-start: 1;
+grid-column-end: 6;		
+grid-row: 6	;		
+align-self: center;
+`;
+
+const WinLossBarPosition = styled.div`
+grid-row: 3;
+grid-column-start: 2;
+grid-column-end: 5;		
+align-self: center;
+margin-top: -5%
+`;
+
+const WinStreakPosition = styled.div`
+grid-row: 5;
+grid-column-start: 1;
+grid-column-end: 6;		
+align-self: center;
+margin-top: 6%;
+`;
 
 export class MatchupHeader extends Component {
     componentWillMount(){
@@ -42,7 +97,7 @@ export class MatchupHeader extends Component {
  
     render() {
         return (
-            <HeaderGrid>
+            <Wrapper>
                 <SchoolLogoPosition>
                 <TeamLogo 
                     slug={this.state.schoolSlug}
@@ -92,7 +147,7 @@ export class MatchupHeader extends Component {
                 <DottedLinePosition>
                 <DottedLine bold/>
                 </DottedLinePosition>
-            </HeaderGrid>
+            </Wrapper>
         )
     }
 

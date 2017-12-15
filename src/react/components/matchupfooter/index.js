@@ -4,8 +4,8 @@ import styled from "styled-components";
 import { MatchupLink } from '../../subcomponents/';
 import { Wordmark } from '../../subcomponents/';
 
-const MatchupFooters = styled.div`
-	display: grid;
+const Wrapper = styled.div`
+	display: grid;  
 	grid-template-columns: 1fr 1fr;
 `
 
@@ -19,10 +19,10 @@ export class MatchupFooter extends Component {
  
     render() {
         return (
-			<MatchupFooters>
+			<Wrapper>
                 <Wordmark/>
 				<MatchupLink schoolSlug={this.state.schoolSlug} matchupSchoolSlug={this.state.matchupSchoolSlug}/>
-			</MatchupFooters>
+			</Wrapper>
         )
     }
 
