@@ -20,6 +20,9 @@ export class Matchup extends Component {
           Wins
           Ties
           Losses
+          WinStreakLength
+          WinStreakEndYear
+          WinStreakStartYear
           WinPercent
           MatchupTeam {
             SchoolName
@@ -29,6 +32,9 @@ export class Matchup extends Component {
             Matchup {
               Wins
               WinPercent
+              WinStreakLength
+              WinStreakEndYear
+              WinStreakStartYear
             }
           }
         }

@@ -76,8 +76,38 @@ export class MatchupHeader extends Component {
 	constructor(props) {
 			super(props)
 			this.loadHeader = this.loadHeader.bind(this)
-	}
+			this.loadWinStreak = this.loadWinStreak.bind(this)
 
+	}
+	loadWinStreak() {
+		if (this.props.matchUpData.data.team.Matchup.WinStreakEndYear > this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
+			let winStreakYears = this.props.matchUpData.data.team.Matchup.WinStreakStartYear.concat("-", this.props.matchUpData.data.team.Matchup.WinStreakEndYear)
+			return (
+				<WinStreak
+					winStreak={this.props.matchUpData.data.team.Matchup.WinStreakLength} 
+					winStreakSchool={this.props.matchUpData.data.team.SchoolName} 
+					winStreakYears={winStreakYears} 
+					winStreakSchoolColor={this.props.matchUpData.data.team.Branding.HexColor}                
+				/>
+			)
+		}
+		else  if (this.props.matchUpData.data.team.Matchup.WinStreakEndYear < this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
+			let winStreakYears = this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakStartYear.concat("-", this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear)
+			return (
+				<WinStreak
+					winStreak={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakLength} 
+					winStreakSchool={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName} 
+					winStreakYears={winStreakYears} 
+					winStreakSchoolColor={this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor}                
+				/>
+			)
+		}
+		else {
+			return (
+				<div></div>
+			)
+		}
+	}
 	loadHeader() {
 		if (this.props.matchUpData.data.loading) {
 			return (
@@ -128,12 +158,7 @@ export class MatchupHeader extends Component {
 					/>
 				</WinLossBarPosition>
 				<WinStreakPosition>
-					<WinStreak
-						winStreak={2} 
-						winStreakSchool={this.props.matchUpData.data.team.SchoolName} 
-						winStreakYears={"2001-2002"} 
-						winStreakSchoolColor={this.props.matchUpData.data.team.Branding.HexColor}                
-					/>
+					{this.loadWinStreak()}
 				</WinStreakPosition>
 				<DottedLinePosition>
 					<DottedLine bold/>
