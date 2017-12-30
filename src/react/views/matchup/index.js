@@ -39,7 +39,7 @@ const myQuery = gql`query {
 const MyComponentWithData = graphql(myQuery)(props => 
     <ViewContainerFrame>
       <MatchupHeader matchUpData = {props}/>
-      {/* <MatchupFooter matchUpData = {props}/> */}
+      <MatchupFooter matchUpData = {props}/>
     </ViewContainerFrame>
 );
 

@@ -10,21 +10,35 @@ const Wrapper = styled.div`
 `
 
 export class MatchupFooter extends Component {
-    componentWillMount(){
-        this.setState({
-            schoolSlug: this.props.matchUpData.data.team.SchoolSlug,
-            matchupSchoolSlug:this.props.matchUpData.data.team.MatchupSlug,            
-        })
-    }     
- 
-    render() {
-        return (
-			<Wrapper>
-                <Wordmark/>
-				<MatchupLink schoolSlug={this.state.schoolSlug} matchupSchoolSlug={this.state.matchupSchoolSlug}/>
-			</Wrapper>
-        )
+    constructor(props) {
+			super(props)
+			this.loadFooter = this.loadFooter.bind(this)
     }
-
+    
+    loadFooter() {
+		console.log(this.props.matchUpData.data)
+		console.log("footer render happened")
+		if (this.props.matchUpData.data.loading) {
+			return (
+				<Wrapper>
+					<div></div>
+				</Wrapper>
+			)
+		}
+		else {
+			return (
+				<Wrapper>
+                    <Wordmark/>
+                    <MatchupLink schoolSlug={this.props.matchUpData.data.team.SchoolSlug} matchupSchoolSlug={this.props.matchUpData.data.team.MatchupSlug}/>
+				</Wrapper>
+			)
+		}
+	}
+	render() {
+    return (
+    <div>{this.loadFooter()}</div>
+		)
+	}
 }
+
 
