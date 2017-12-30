@@ -7,10 +7,11 @@ import { MatchupHeader } from '../../components';
 import { MatchupFooter } from '../../components';
 
 export class Matchup extends Component {
-
   loadMatchup() {
-		const myQuery = gql`query {
-      team(School: "georgia-tech", Matchup: "alabama") {
+    console.log(this.props)
+
+		const getMatchup = gql`query Team($schoolSlug: String!,$matchupSchoolSlug: String!){
+      team(School: $schoolSlug, Matchup: $matchupSchoolSlug) {
         SchoolName
         SchoolSlug
         MatchupSlug
@@ -34,9 +35,15 @@ export class Matchup extends Component {
           }
         }
       }
-      }`;
+    }`;
     
-    const MyComponentWithData = graphql(myQuery)(props => 
+    const MyComponentWithData = graphql(getMatchup, {
+      options: { 
+        variables: { 
+          schoolSlug: this.props.schoolSlug,
+          matchupSchoolSlug: this.props.matchupSchoolSlug,
+         } },
+    })(props => 
           <ViewContainerFrame>
             <MatchupHeader matchUpData = {props}/>
             <MatchupFooter matchUpData = {props}/>
