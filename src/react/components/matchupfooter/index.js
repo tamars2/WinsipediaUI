@@ -16,8 +16,6 @@ export class MatchupFooter extends Component {
     }
     
     loadFooter() {
-		console.log(this.props.matchUpData.data)
-		console.log("footer render happened")
 		if (this.props.matchUpData.data.loading) {
 			return (
 				<Wrapper>
@@ -31,9 +29,9 @@ export class MatchupFooter extends Component {
                     <Wordmark/>
                     <MatchupLink schoolSlug={this.props.matchUpData.data.team.SchoolSlug} matchupSchoolSlug={this.props.matchUpData.data.team.MatchupSlug}/>
 				</Wrapper>
-			)
+							)
+					}
 		}
-	}
 	render() {
     return (
     <div>{this.loadFooter()}</div>

@@ -79,8 +79,6 @@ export class MatchupHeader extends Component {
 	}
 
 	loadHeader() {
-		console.log(this.props.matchUpData.data)
-		console.log("render happened")
 		if (this.props.matchUpData.data.loading) {
 			return (
 				<Wrapper>
