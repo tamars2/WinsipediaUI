@@ -24,8 +24,8 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      schoolSlug: "georgia-tech",
-      matchupSchoolSlug: "clemson",
+      schoolSlug: school,
+      matchupSchoolSlug: matchupSchool,
   }}
 
   render() {
