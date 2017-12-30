@@ -44,7 +44,7 @@ export class Wins extends Component {
 }
 
   formatPercent() {
-    if (this.props.percent===1 || this.props.percent===0) {
+    if (this.props.percent==="1.000" || this.props.percent==="0.000") {
       return (
         this.props.percent
       )
