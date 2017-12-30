@@ -82,11 +82,11 @@ export class MatchupHeader extends Component {
 		if (this.props.matchUpData.data.loading) {
 			return (
 				<Wrapper>
-					<div></div>
+					<div>Loading</div>
 				</Wrapper>
 			)
 		}
-		else {
+		else if (typeof this.props.matchUpData.data.error === "undefined") {
 			return (
 				<Wrapper>
 					<SchoolLogoPosition>
@@ -141,6 +141,14 @@ export class MatchupHeader extends Component {
 				</Wrapper>
 			)
 		}
+		else {
+			return (
+				<Wrapper>
+					<div>So sad</div>
+				</Wrapper>
+			)
+		}
+		
 	}
 	render() {
     return (

@@ -23,14 +23,21 @@ export class MatchupFooter extends Component {
 				</Wrapper>
 			)
 		}
+		else if (typeof this.props.matchUpData.data.error === "undefined") {
+			return (
+				<Wrapper>
+					<Wordmark/>
+					<MatchupLink schoolSlug={this.props.matchUpData.data.team.SchoolSlug} matchupSchoolSlug={this.props.matchUpData.data.team.MatchupSlug}/>
+				</Wrapper>
+			)
+		}
 		else {
 			return (
 				<Wrapper>
-                    <Wordmark/>
-                    <MatchupLink schoolSlug={this.props.matchUpData.data.team.SchoolSlug} matchupSchoolSlug={this.props.matchUpData.data.team.MatchupSlug}/>
+					<div>So sad</div>
 				</Wrapper>
-							)
-					}
+			)
+		}
 		}
 	render() {
     return (

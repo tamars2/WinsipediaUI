@@ -8,8 +8,6 @@ import { MatchupFooter } from '../../components';
 
 export class Matchup extends Component {
   loadMatchup() {
-    console.log(this.props)
-
 		const getMatchup = gql`query Team($schoolSlug: String!,$matchupSchoolSlug: String!){
       team(School: $schoolSlug, Matchup: $matchupSchoolSlug) {
         SchoolName
