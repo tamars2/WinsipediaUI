@@ -38,13 +38,30 @@ font-family: 'Gudea', sans-serif;
 `;
 
 export class Wins extends Component {
+	constructor(props) {
+    super(props)
+    this.formatPercent = this.formatPercent.bind(this)
+}
 
+  formatPercent() {
+    if (this.props.percent===1 || this.props.percent===0) {
+      return (
+        this.props.percent
+      )
+    }
+    else {
+      return (
+        (this.props.percent).substring(1, 5)
+      )
+    }
+  }
+  
   render() {
     return (
       <Wrapper>
         <Number>{this.props.wins}</Number>
         <Label>WINS</Label>
-        <Percent>({(Math.round(this.props.percent*1000)/1000).toString().substring(1, 5)})</Percent>
+        <Percent>{this.formatPercent()}</Percent>
       </Wrapper>
     )
   }
