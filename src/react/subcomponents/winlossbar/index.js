@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 			props.schoolWinPercent + "%" + props.tiesPercent + "%" + props.matchupSchoolWinPercent + "%"
 		)
 	};
-	grid-template-rows: 7vw;
+	grid-template-rows: 9vw;
 `;
 
 const SchoolWins = styled.div`

@@ -4,9 +4,9 @@ import styled from "styled-components";
 import {ViewContainerBackground} from '../../subcomponents'
 
 const ViewContainerFrames = styled.div`
-	border-radius: 20px;
+	border-radius: 10px;
 	background: white;
-	padding: 8px;
+	padding: 0px;
 `
 
 export class ViewContainerFrame extends Component {

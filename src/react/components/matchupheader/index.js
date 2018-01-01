@@ -145,7 +145,7 @@ export class MatchupHeader extends Component {
 				<MatchupSchoolLogoPosition>
 					<TeamLogo 
 						slug={this.props.matchUpData.data.team.MatchupSlug}
-						school={this.props.matchUpData.data.team.SchoolName}
+						school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
 					/>
 				</MatchupSchoolLogoPosition>
 				<WinLossBarPosition>
