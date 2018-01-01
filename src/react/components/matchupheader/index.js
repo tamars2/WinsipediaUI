@@ -85,9 +85,7 @@ font-family: 'Gudea', sans-serif;
 font-size: 5vw;
 height: 3vw;
 color: #aaa;
-
-
-`
+`;
 
 export class MatchupHeader extends Component {
 	constructor(props) {
@@ -143,44 +141,44 @@ export class MatchupHeader extends Component {
 								school={this.props.matchUpData.data.team.SchoolName}
 							/>
 						</SchoolLogoPosition>
-					<SchoolWinsPosition>
-					<Wins 
-						wins={this.props.matchUpData.data.team.Matchup.Wins} 
-						percent={this.props.matchUpData.data.team.Matchup.WinPercent}
-					/>
-					</SchoolWinsPosition>
-						<TiesPosition>
-							<Ties 
-								ties={this.props.matchUpData.data.team.Matchup.Ties}
+						<SchoolWinsPosition>
+						<Wins 
+							wins={this.props.matchUpData.data.team.Matchup.Wins} 
+							percent={this.props.matchUpData.data.team.Matchup.WinPercent}
+						/>
+						</SchoolWinsPosition>
+							<TiesPosition>
+								<Ties 
+									ties={this.props.matchUpData.data.team.Matchup.Ties}
+								/>
+							</TiesPosition>
+						<MatchupSchoolWinsPosition>
+						<Wins 
+							wins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins} 
+							percent={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinPercent}
+						/>
+						</MatchupSchoolWinsPosition>
+						<MatchupSchoolLogoPosition>
+							<TeamLogo 
+								slug={this.props.matchUpData.data.team.MatchupSlug}
+								school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
 							/>
-						</TiesPosition>
-					<MatchupSchoolWinsPosition>
-					<Wins 
-						wins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins} 
-						percent={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinPercent}
-					/>
-					</MatchupSchoolWinsPosition>
-					<MatchupSchoolLogoPosition>
-						<TeamLogo 
-							slug={this.props.matchUpData.data.team.MatchupSlug}
-							school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
-						/>
-					</MatchupSchoolLogoPosition>
-					<WinLossBarPosition>
-						<WinLossBar 
-							schoolColor={this.props.matchUpData.data.team.Branding.HexColor} 
-							matchupSchoolColor={this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} 
-							schoolWins={this.props.matchUpData.data.team.Matchup.Wins} 
-							ties={this.props.matchUpData.data.team.Matchup.Ties} 
-							matchupWins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins}
-						/>
-					</WinLossBarPosition>
-					<WinStreakPosition>
-						{this.loadWinStreak()}
-					</WinStreakPosition>
-					<DottedLinePosition>
-						<DottedLine/>
-					</DottedLinePosition>
+						</MatchupSchoolLogoPosition>
+						<WinLossBarPosition>
+							<WinLossBar 
+								schoolColor={this.props.matchUpData.data.team.Branding.HexColor} 
+								matchupSchoolColor={this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} 
+								schoolWins={this.props.matchUpData.data.team.Matchup.Wins} 
+								ties={this.props.matchUpData.data.team.Matchup.Ties} 
+								matchupWins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins}
+							/>
+						</WinLossBarPosition>
+						<WinStreakPosition>
+							{this.loadWinStreak()}
+						</WinStreakPosition>
+						<DottedLinePosition>
+							<DottedLine/>
+						</DottedLinePosition>
 					</Wrapper>
 				)
 			}
@@ -194,15 +192,15 @@ export class MatchupHeader extends Component {
 							/>
 						</SchoolLogoPosition>
 						<NoPreviousMatchups>NO PREVIOUS MATCHUPS</NoPreviousMatchups>
-					<MatchupSchoolLogoPosition>
-						<TeamLogo 
-							slug={this.props.matchUpData.data.team.MatchupSlug}
-							school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
-						/>
-					</MatchupSchoolLogoPosition>
-					<DottedLinePosition>
-						<DottedLine/>
-					</DottedLinePosition>
+						<MatchupSchoolLogoPosition>
+							<TeamLogo 
+								slug={this.props.matchUpData.data.team.MatchupSlug}
+								school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
+							/>
+						</MatchupSchoolLogoPosition>
+						<DottedLinePosition>
+							<DottedLine/>
+						</DottedLinePosition>
 					</Wrapper>
 				)
 			}
