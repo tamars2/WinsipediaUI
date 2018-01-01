@@ -7,6 +7,8 @@ import { Wordmark } from '../../subcomponents/';
 const Wrapper = styled.div`
 	display: grid;  
 	grid-template-columns: 1fr 1fr;
+	padding-top: 2vw;
+	padding-bottom: 2vw;
 `
 
 export class MatchupFooter extends Component {

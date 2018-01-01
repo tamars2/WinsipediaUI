@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { RankAndPercent } from '../';
 import { RankAndPercentLabel } from '../';
 
+
 const Wrapper = styled.div`
   display: grid;
 	grid-template-columns: 1fr 1fr 1fr;

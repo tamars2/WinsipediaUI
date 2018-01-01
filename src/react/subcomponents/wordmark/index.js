@@ -5,7 +5,7 @@ const Wordmarks = styled.img`
 	align-self: center;
 	display: block;
 	width: 80%;
-	padding-left:2%;
+	padding-left:2vw;
 `;
 
 export class Wordmark extends Component {

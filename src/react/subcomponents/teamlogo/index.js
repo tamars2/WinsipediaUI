@@ -5,6 +5,7 @@ const TeamLogos = styled.img`
 	align-self: center;
 	display: block;
 	width: 95%;
+  padding: 1vw;
 `
 export class TeamLogo extends Component {
 
