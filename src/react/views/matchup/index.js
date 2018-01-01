@@ -95,7 +95,8 @@ export class Matchup extends Component {
           </ViewContainerFrame>
 
     );
-    if (this.props.verbose) {
+    console.log(this.props.verbose)
+    if (this.props.verbose === "true") {
       return (
         <MyComponentWithDataVerbose>
         </MyComponentWithDataVerbose>
