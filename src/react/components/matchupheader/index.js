@@ -87,6 +87,16 @@ height: 3vw;
 color: #aaa;
 `;
 
+const Loading = styled.img`
+grid-row-start: 1;
+grid-row-end: 5;
+grid-column-start: 1;
+grid-column-end: 6;	
+display: block;
+margin: 0 auto;
+
+`
+
 export class MatchupHeader extends Component {
 	constructor(props) {
 			super(props)
@@ -127,7 +137,8 @@ export class MatchupHeader extends Component {
 		if (this.props.matchUpData.data.loading) {
 			return (
 				<Wrapper>
-					<div>Loading</div>
+				<Loading src={require("../../../media/images/loading.gif")} alt="loading">
+				</Loading>
 				</Wrapper>
 			)
 		}

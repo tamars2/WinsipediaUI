@@ -10,7 +10,13 @@ const Wrapper = styled.div`
 	padding-top: 2vw;
 	padding-bottom: 2vw;
 `
-
+const Loading = styled.div`
+	grid-row-start: 1;
+	grid-row-end: 2;
+	grid-column-start: 1;
+	grid-column-end: 3;	
+	height: 20px;
+`
 export class MatchupFooter extends Component {
     constructor(props) {
 			super(props)
@@ -21,7 +27,7 @@ export class MatchupFooter extends Component {
 		if (this.props.matchUpData.data.loading) {
 			return (
 				<Wrapper>
-					<div></div>
+					<Loading></Loading>
 				</Wrapper>
 			)
 		}
