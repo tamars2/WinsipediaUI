@@ -23,7 +23,6 @@ export class MatchupBody extends Component {
 			)
 		}
 		else if (typeof this.props.matchUpData.data.error === "undefined") {
-			console.log(this.props.matchUpData.data.team.AllTimeRankings)
 			return (
 				<Wrapper>
 					<MatchupBodyRow schoolRank = {this.props.matchUpData.data.team.AllTimeRankings.AllTimeRecordRank} schoolData = {this.props.matchUpData.data.team.AllTimeRankings.AllTimeRecordPercent} schoolColor = {this.props.matchUpData.data.team.Branding.HexColor} matchupSchoolRank = {this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.AllTimeRecordRank} matchupSchoolData = {this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.AllTimeRecordPercent} matchupSchoolColor = {this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} leader = "school" label = "ALL-TIME RECORD"/>
