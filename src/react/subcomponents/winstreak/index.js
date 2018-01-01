@@ -10,49 +10,49 @@ color: #595e60;
 const Number = styled.span`
 grid-row-start: 1;
 grid-row-end: 2;
-grid-column: 1;		
-font-size: 4vw;
-text-align: center;
+grid-column: 1;	
 align-self: center;
+font-size: 4vw;
 font-family: 'Gudea', sans-serif;
 font-weight: bold;
+text-align: center;
 `;
 
 const Label = styled.div`
 grid-row-start: 1;
 grid-row-end: 2;
-grid-column: 1;		
-font-size: 4vw;
-text-align: center;
+grid-column: 1;
 align-self: center;
 font-family: 'Gudea', sans-serif;
+font-size: 4vw;
+text-align: center;
 `;
 
 const Team = styled.span`
 grid-row-start: 1;
 grid-row-end: 2;
-grid-column: 1;		
-font-size: 4vw;
-text-align: center;
-font-weight: 900;
+grid-column: 1;
 align-self: center;
 font-family: 'Gudea', sans-serif;
+font-size: 4vw;
+font-weight: bold;
+text-align: center;
 color: ${
   props => (
     props.winStreakSchoolColor
   )
 };	
-font-weight: bold;
+
 `;
 
 const Years = styled.div`
 grid-row-start: 2;
 grid-row-end: 3;
-grid-column: 1;		
-font-size: 4vw;
-text-align: center;
+grid-column: 1;
 align-self: center;
 font-family: 'Gudea', sans-serif;
+font-size: 4vw;
+text-align: center;
 `;
  
 

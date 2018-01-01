@@ -11,7 +11,7 @@ import { DottedLine } from '../../subcomponents/';
 const Wrapper = styled.div`
 display: grid;
 grid-template-columns: 17% 1fr 34% 1fr 17%;
-grid-template-rows: 100% 100% 100% 100% 17vw;
+grid-template-rows: 100% 100% 100% 100% 100%;
 `;
 
 const SchoolLogoPosition = styled.div`
@@ -61,7 +61,7 @@ grid-row: 3;
 grid-column-start: 2;
 grid-column-end: 5;		
 align-self: center;
-margin-top: -5%
+margin-top: -3vw	;
 `;
 
 const WinStreakPosition = styled.div`
@@ -69,18 +69,22 @@ grid-row: 5;
 grid-column-start: 1;
 grid-column-end: 6;		
 align-self: center;
-margin-top: 6%;
+margin-top: 6vw;
 text-align: center;
+padding-bottom: 2vw;
 `;
 
 const NoPreviousMatchups = styled.div`
-grid-row: 5;
+grid-row-start: 1;
+grid-row-end: 3;
 grid-column-start: 1;
-grid-column-end: 6;		
+grid-column-end: 6;	
+text-align: center;	
 align-self: center;
 font-family: 'Gudea', sans-serif;
-line-height: 0vw;
+font-size: 5vw;
 height: 3vw;
+color: #aaa;
 
 
 `
@@ -117,7 +121,7 @@ export class MatchupHeader extends Component {
 		}
 		else {
 			return (
-				<NoPreviousMatchups>NO PREVIOUS MATCHUPS</NoPreviousMatchups>
+				<div/>
 			)
 		}
 	}
@@ -130,54 +134,78 @@ export class MatchupHeader extends Component {
 			)
 		}
 		else if (typeof this.props.matchUpData.data.error === "undefined") {
-			return (
-				<Wrapper>
-					<SchoolLogoPosition>
-						<TeamLogo  
-							slug={this.props.matchUpData.data.team.SchoolSlug}
-							school={this.props.matchUpData.data.team.SchoolName}
-						/>
-					</SchoolLogoPosition>
-				<SchoolWinsPosition>
-				<Wins 
-					wins={this.props.matchUpData.data.team.Matchup.Wins} 
-					percent={this.props.matchUpData.data.team.Matchup.WinPercent}
-				/>
-				</SchoolWinsPosition>
-					<TiesPosition>
-						<Ties 
-							ties={this.props.matchUpData.data.team.Matchup.Ties}
-						/>
-					</TiesPosition>
-				<MatchupSchoolWinsPosition>
-				<Wins 
-					wins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins} 
-					percent={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinPercent}
-				/>
-				</MatchupSchoolWinsPosition>
-				<MatchupSchoolLogoPosition>
-					<TeamLogo 
-						slug={this.props.matchUpData.data.team.MatchupSlug}
-						school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
+			if (this.props.matchUpData.data.team.Matchup.WinStreakEndYear !== this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
+				return (
+					<Wrapper>
+						<SchoolLogoPosition>
+							<TeamLogo  
+								slug={this.props.matchUpData.data.team.SchoolSlug}
+								school={this.props.matchUpData.data.team.SchoolName}
+							/>
+						</SchoolLogoPosition>
+					<SchoolWinsPosition>
+					<Wins 
+						wins={this.props.matchUpData.data.team.Matchup.Wins} 
+						percent={this.props.matchUpData.data.team.Matchup.WinPercent}
 					/>
-				</MatchupSchoolLogoPosition>
-				<WinLossBarPosition>
-					<WinLossBar 
-						schoolColor={this.props.matchUpData.data.team.Branding.HexColor} 
-						matchupSchoolColor={this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} 
-						schoolWins={this.props.matchUpData.data.team.Matchup.Wins} 
-						ties={this.props.matchUpData.data.team.Matchup.Ties} 
-						matchupWins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins}
+					</SchoolWinsPosition>
+						<TiesPosition>
+							<Ties 
+								ties={this.props.matchUpData.data.team.Matchup.Ties}
+							/>
+						</TiesPosition>
+					<MatchupSchoolWinsPosition>
+					<Wins 
+						wins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins} 
+						percent={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinPercent}
 					/>
-				</WinLossBarPosition>
-				<WinStreakPosition>
-					{this.loadWinStreak()}
-				</WinStreakPosition>
-				<DottedLinePosition>
-					<DottedLine/>
-				</DottedLinePosition>
-				</Wrapper>
-			)
+					</MatchupSchoolWinsPosition>
+					<MatchupSchoolLogoPosition>
+						<TeamLogo 
+							slug={this.props.matchUpData.data.team.MatchupSlug}
+							school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
+						/>
+					</MatchupSchoolLogoPosition>
+					<WinLossBarPosition>
+						<WinLossBar 
+							schoolColor={this.props.matchUpData.data.team.Branding.HexColor} 
+							matchupSchoolColor={this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} 
+							schoolWins={this.props.matchUpData.data.team.Matchup.Wins} 
+							ties={this.props.matchUpData.data.team.Matchup.Ties} 
+							matchupWins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins}
+						/>
+					</WinLossBarPosition>
+					<WinStreakPosition>
+						{this.loadWinStreak()}
+					</WinStreakPosition>
+					<DottedLinePosition>
+						<DottedLine/>
+					</DottedLinePosition>
+					</Wrapper>
+				)
+			}
+			else {
+				return (
+					<Wrapper>
+						<SchoolLogoPosition>
+							<TeamLogo  
+								slug={this.props.matchUpData.data.team.SchoolSlug}
+								school={this.props.matchUpData.data.team.SchoolName}
+							/>
+						</SchoolLogoPosition>
+						<NoPreviousMatchups>NO PREVIOUS MATCHUPS</NoPreviousMatchups>
+					<MatchupSchoolLogoPosition>
+						<TeamLogo 
+							slug={this.props.matchUpData.data.team.MatchupSlug}
+							school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
+						/>
+					</MatchupSchoolLogoPosition>
+					<DottedLinePosition>
+						<DottedLine/>
+					</DottedLinePosition>
+					</Wrapper>
+				)
+			}
 		}
 		else {
 			return (
