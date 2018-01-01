@@ -12,8 +12,23 @@ export class MatchupBody extends Component {
     constructor(props) {
 			super(props)
 			this.loadBody = this.loadBody.bind(this)
-    }
-    
+			this.formatPercent = this.formatPercent.bind(this)
+
+		}
+		
+		formatPercent(percent) {
+			if (percent==="1.000" || percent==="0.000") {
+				return (
+					percent
+				)
+			}
+			else {
+				return (
+					(percent.toString()).substring(1, 5)
+				)
+			}
+		}
+
     loadBody() {
 		if (this.props.matchUpData.data.loading) {
 			return (
@@ -23,9 +38,11 @@ export class MatchupBody extends Component {
 			)
 		}
 		else if (typeof this.props.matchUpData.data.error === "undefined") {
+			let schoolAllTimeRecordPercent = (this.formatPercent(this.props.matchUpData.data.team.AllTimeRankings.AllTimeRecordPercent))
+			let matchupSchoolAllTimeRecordPercent = (this.formatPercent(this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.AllTimeRecordPercent))
 			return (
 				<Wrapper>
-					<MatchupBodyRow schoolRank = {this.props.matchUpData.data.team.AllTimeRankings.AllTimeRecordRank} schoolData = {this.props.matchUpData.data.team.AllTimeRankings.AllTimeRecordPercent} schoolColor = {this.props.matchUpData.data.team.Branding.HexColor} matchupSchoolRank = {this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.AllTimeRecordRank} matchupSchoolData = {this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.AllTimeRecordPercent} matchupSchoolColor = {this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} label = "ALL-TIME RECORD"/>
+					<MatchupBodyRow schoolRank = {this.props.matchUpData.data.team.AllTimeRankings.AllTimeRecordRank} schoolData = {schoolAllTimeRecordPercent} schoolColor = {this.props.matchUpData.data.team.Branding.HexColor} matchupSchoolRank = {this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.AllTimeRecordRank} matchupSchoolData = {matchupSchoolAllTimeRecordPercent} matchupSchoolColor = {this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} label = "ALL-TIME RECORD"/>
 					<DottedLine/>
 					<MatchupBodyRow schoolRank = {this.props.matchUpData.data.team.AllTimeRankings.NationalChampRank} schoolData = {this.props.matchUpData.data.team.AllTimeRankings.NationalChampData} schoolColor = {this.props.matchUpData.data.team.Branding.HexColor} matchupSchoolRank = {this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.NationalChampRank} matchupSchoolData = {this.props.matchUpData.data.team.Matchup.MatchupTeam.AllTimeRankings.NationalChampData} matchupSchoolColor = {this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} label = "NATIONAL CHAMPIONSHIPS"/>
 					<DottedLine/>
