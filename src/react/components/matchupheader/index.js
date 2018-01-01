@@ -143,7 +143,7 @@ export class MatchupHeader extends Component {
 			)
 		}
 		else if (typeof this.props.matchUpData.data.error === "undefined") {
-			if (this.props.matchUpData.data.team.Matchup.WinStreakEndYear !== this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
+			if ((this.props.matchUpData.data.team.Matchup.Wins + this.props.matchUpData.data.team.Matchup.Ties + this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins) > 0)  {
 				return (
 					<Wrapper>
 						<SchoolLogoPosition>
