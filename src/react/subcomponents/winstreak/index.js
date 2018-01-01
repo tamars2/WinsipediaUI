@@ -57,12 +57,26 @@ text-align: center;
  
 
 export class WinStreak extends Component {
+  constructor(props) {
+    super(props)
+    this.formatYears = this.formatYears.bind(this)
+
+}
+formatYears() {
+  if ((this.props.winStreakYears.substring(0, 4))!==(this.props.winStreakYears.substring(5, 9))) {
+    return ("(" + this.props.winStreakYears + ")")
+  }
+  else {
+    console.log(this.props.winStreakYears.substring(5, 9))
+    return "(" + (this.props.winStreakYears.substring(5, 9)) + ")"
+  }
+}
   
   render() {
     return (
       <Wrapper>
         <Label>CURRENT WIN STREAK <Number>{this.props.winStreak}</Number> <Team winStreakSchoolColor={this.props.winStreakSchoolColor}>{this.props.winStreakSchool.toUpperCase()}</Team></Label>
-        <Years>({this.props.winStreakYears})</Years>
+        <Years>{this.formatYears()}</Years>
       </Wrapper>
     )
   }
