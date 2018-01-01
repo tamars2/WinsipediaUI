@@ -18,6 +18,7 @@ background: ${
 		props.schoolColor
 	)
 };
+margin-right: 1px;
 `;
 
 const MatchupSchoolWins = styled.div`
@@ -32,8 +33,7 @@ background: ${
 const Ties = styled.div`
 grid-area: 1 2;		
 background: #bbb;	
-margin-left: 2px;	
-margin-right: 2px;
+margin-right: 1px;
 `;
 
 

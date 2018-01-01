@@ -26,7 +26,6 @@ grid-template-columns: 40% 60%;
 grid-template-rows: 3vw 3vw 6vw;
 color: #595e60;
 font-family: 'Gudea', sans-serif;
-
 `;
 
 export class Ties extends Component {

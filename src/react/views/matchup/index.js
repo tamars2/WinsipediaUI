@@ -5,6 +5,8 @@ import gql from 'graphql-tag';
 import { ViewContainerFrame } from '../../components';
 import { MatchupHeader } from '../../components';
 import { MatchupFooter } from '../../components';
+import { MatchupBody } from '../../components';
+
 
 export class Matchup extends Component {
   loadMatchup() {
@@ -15,6 +17,18 @@ export class Matchup extends Component {
         MatchupSlug
         Branding {
           HexColor
+        }
+        AllTimeRankings {
+          AllTimeRecordPercent
+          AllTimeRecordRank
+          NationalChampData
+          NationalChampRank
+          ConferenceChampData
+          ConferenceChampRank
+          BowlGameData
+          BowlGameRank
+          WinData
+          WinRank
         }
         Matchup {
           Wins
@@ -28,6 +42,18 @@ export class Matchup extends Component {
             SchoolName
             Branding {
               HexColor
+            }
+            AllTimeRankings {
+              AllTimeRecordPercent
+              AllTimeRecordRank
+              NationalChampData
+              NationalChampRank
+              ConferenceChampData
+              ConferenceChampRank
+              BowlGameData
+              BowlGameRank
+              WinData
+              WinRank
             }
             Matchup {
               Wins
@@ -55,14 +81,40 @@ export class Matchup extends Component {
 
     );
 
-    return (
-      <MyComponentWithData>
-      </MyComponentWithData>
-    )
+    const MyComponentWithDataVerbose = graphql(getMatchup, {
+      options: { 
+        variables: { 
+          schoolSlug: this.props.schoolSlug,
+          matchupSchoolSlug: this.props.matchupSchoolSlug,
+         } },
+    })(props => 
+          <ViewContainerFrame>
+            <MatchupHeader matchUpData = {props}/>
+            <MatchupBody matchUpData = {props}/>
+            <MatchupFooter matchUpData = {props}/>
+          </ViewContainerFrame>
+
+    );
+    if (this.props.verbose) {
+      return (
+        <MyComponentWithDataVerbose>
+        </MyComponentWithDataVerbose>
+      )
+    }
+    else {
+      return (
+        <MyComponentWithData>
+        </MyComponentWithData>
+      )
+    }
 	}
 	render() {
 		return (
-      <div>{this.loadMatchup()}</div>
+      <div>
+        <style>@import url('https://fonts.googleapis.com/css?family=Ultra')</style>
+        <style>@import url('https://fonts.googleapis.com/css?family=Gudea')</style>
+        {this.loadMatchup()}
+      </div>
 		)
 	}
 }

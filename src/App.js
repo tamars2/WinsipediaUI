@@ -19,6 +19,7 @@ function getParameterByName(parameter) {
 
 const school = getParameterByName("school")
 const matchupSchool = getParameterByName("matchupSchool")
+const verbose = getParameterByName("verbose")
 
 export default class App extends Component {
   constructor(props) {
@@ -26,14 +27,14 @@ export default class App extends Component {
     this.state = {
       schoolSlug: school,
       matchupSchoolSlug: matchupSchool,
+      verbose: verbose,
   }}
 
   render() {
     return (
-        <ApolloProvider client={client}>
-
-          <Matchup schoolSlug = {this.state.schoolSlug} matchupSchoolSlug = {this.state.matchupSchoolSlug} />
-          </ApolloProvider>
+      <ApolloProvider client={client}>
+        <Matchup schoolSlug = {this.state.schoolSlug} matchupSchoolSlug = {this.state.matchupSchoolSlug} verbose = {this.state.verbose}/>
+      </ApolloProvider>
 
     )
   }

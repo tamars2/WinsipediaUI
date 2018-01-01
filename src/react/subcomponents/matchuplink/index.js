@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 
-const MatchupLinks = styled.a`
+const Wrapper = styled.a`
 	align-self: center;
 	display: block;
 	font-family: 'Gudea', sans-serif;
@@ -13,10 +13,10 @@ export class MatchupLink extends Component {
 
   render() {
     return (
-        <MatchupLinks 
+        <Wrapper 
 				href={"http://www.winsipedia.com/" + this.props.schoolSlug + "/vs/" + this.props.matchupSchoolSlug}>
 				Full Matchup Page >
-				</MatchupLinks>
+				</Wrapper>
     )
   }
 
