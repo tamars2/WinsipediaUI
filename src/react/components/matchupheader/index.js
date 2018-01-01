@@ -9,10 +9,22 @@ import {WinStreak} from '../../subcomponents/';
 import { DottedLine } from '../../subcomponents/';
 
 const Wrapper = styled.div`
+
+`;
+
+const HeaderContent = styled.div`
 display: grid;
 grid-template-columns: 17% 1fr 34% 1fr 17%;
 grid-template-rows: 100% 100% 100% 100% 100%;
-`;
+min-height: 37.5vw;
+`
+
+const NoMatchupHeaderContent = styled.div`
+display: grid;
+grid-template-columns: 30% 1fr 34% 1fr 30%;
+grid-template-rows: 100% 100% 100% 100% 100%;
+min-height: 37.5vw;
+`
 
 const SchoolLogoPosition = styled.div`
 grid-row-start: 1;
@@ -49,13 +61,6 @@ grid-column: 5;
 align-self: center;
 `;
 
-const DottedLinePosition = styled.div`
-grid-column-start: 1;
-grid-column-end: 6;		
-grid-row: 6	;		
-align-self: center;
-`;
-
 const WinLossBarPosition = styled.div`
 grid-row: 3;
 grid-column-start: 2;
@@ -75,8 +80,8 @@ padding-bottom: 2vw;
 `;
 
 const NoPreviousMatchups = styled.div`
-grid-row-start: 1;
-grid-row-end: 3;
+grid-row-start: 3;
+grid-row-end: 5;
 grid-column-start: 1;
 grid-column-end: 6;	
 text-align: center;	
@@ -129,7 +134,7 @@ export class MatchupHeader extends Component {
 		}
 		else {
 			return (
-				<div/>
+				<NoPreviousMatchups>NEITHER TEAM HOLDS A WIN STREAK</NoPreviousMatchups>
 			)
 		}
 	}
@@ -146,6 +151,7 @@ export class MatchupHeader extends Component {
 			if ((this.props.matchUpData.data.team.Matchup.Wins + this.props.matchUpData.data.team.Matchup.Ties + this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins) > 0)  {
 				return (
 					<Wrapper>
+						<HeaderContent>
 						<SchoolLogoPosition>
 							<TeamLogo  
 								slug={this.props.matchUpData.data.team.SchoolSlug}
@@ -187,15 +193,15 @@ export class MatchupHeader extends Component {
 						<WinStreakPosition>
 							{this.loadWinStreak()}
 						</WinStreakPosition>
-						<DottedLinePosition>
-							<DottedLine/>
-						</DottedLinePosition>
+						</HeaderContent>
+						<DottedLine/>
 					</Wrapper>
 				)
 			}
 			else {
 				return (
 					<Wrapper>
+						<NoMatchupHeaderContent>
 						<SchoolLogoPosition>
 							<TeamLogo  
 								slug={this.props.matchUpData.data.team.SchoolSlug}
@@ -209,9 +215,8 @@ export class MatchupHeader extends Component {
 								school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
 							/>
 						</MatchupSchoolLogoPosition>
-						<DottedLinePosition>
-							<DottedLine/>
-						</DottedLinePosition>
+						</NoMatchupHeaderContent>
+						<DottedLine/>
 					</Wrapper>
 				)
 			}
