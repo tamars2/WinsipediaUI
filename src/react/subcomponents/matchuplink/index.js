@@ -5,8 +5,10 @@ const Wrapper = styled.a`
 	align-self: center;
 	display: block;
 	font-family: 'Gudea', sans-serif;
-	font-size: 3vw;
-	font-weight: 535;
+	font-size: 4vw;
+	font-weight: 900;
+	text-decoration:  none;
+
 `
 
 export class MatchupLink extends Component {

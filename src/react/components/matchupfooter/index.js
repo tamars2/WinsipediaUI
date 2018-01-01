@@ -6,7 +6,7 @@ import { Wordmark } from '../../subcomponents/';
 
 const Wrapper = styled.div`
 	display: grid;  
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 60% 40%;
 	padding-top: 2vw;
 	padding-bottom: 2vw;
 `
