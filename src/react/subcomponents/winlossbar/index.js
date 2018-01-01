@@ -6,7 +6,6 @@ const Wrapper = styled.div`
 	grid-template-columns: ${
 		props => {
 			if (props.schoolWinPercent + props.tiesPercent + props.matchupSchoolWinPercent > 0) {
-				console.log(props.schoolWinPercent)
 				return (
 					props.schoolWinPercent + "%" + props.tiesPercent + "%" + props.matchupSchoolWinPercent + "%"
 				)
