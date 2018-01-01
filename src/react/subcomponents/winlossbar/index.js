@@ -4,12 +4,22 @@ import styled from "styled-components";
 const Wrapper = styled.div`
 	display: grid;
 	grid-template-columns: ${
-		props => (
-			props.schoolWinPercent + "%" + props.tiesPercent + "%" + props.matchupSchoolWinPercent + "%"
-		)
+		props => {
+			if (props.schoolWinPercent + props.tiesPercent + props.matchupSchoolWinPercent > 0) {
+				console.log(props.schoolWinPercent)
+				return (
+					props.schoolWinPercent + "%" + props.tiesPercent + "%" + props.matchupSchoolWinPercent + "%"
+				)
+			}
+			else {
+				return "0% 100% 0%"
+			}
+			}
 	};
 	grid-template-rows: 9vw;
 `;
+
+
 
 const SchoolWins = styled.div`
 grid-area: 1 1;		

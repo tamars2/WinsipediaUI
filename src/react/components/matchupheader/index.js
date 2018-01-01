@@ -70,7 +70,20 @@ grid-column-start: 1;
 grid-column-end: 6;		
 align-self: center;
 margin-top: 6%;
+text-align: center;
 `;
+
+const NoPreviousMatchups = styled.div`
+grid-row: 5;
+grid-column-start: 1;
+grid-column-end: 6;		
+align-self: center;
+font-family: 'Gudea', sans-serif;
+line-height: 0vw;
+height: 3vw;
+
+
+`
 
 export class MatchupHeader extends Component {
 	constructor(props) {
@@ -104,7 +117,7 @@ export class MatchupHeader extends Component {
 		}
 		else {
 			return (
-				<div></div>
+				<NoPreviousMatchups>NO PREVIOUS MATCHUPS</NoPreviousMatchups>
 			)
 		}
 	}

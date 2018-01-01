@@ -7,7 +7,8 @@ const Label = styled.div`
 	grid-column: 2;
 	font-size: 3vw;
 	text-align: left;
-	align-self: center;
+  align-self: center;
+  margin-left: 2px;
 `;
 
 const Number = styled.div`
@@ -18,6 +19,7 @@ font-size: 6vw;
 text-align: right;
 align-self: center;
 font-weight: bold;
+margin-right: 2px;
 `;
 
 const Wrapper = styled.div`
