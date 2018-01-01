@@ -16,7 +16,7 @@ const Rank = styled.div`
 	vertical-align: middle;
 	align-self: center;
 	text-align: center;
-	line-height: 9vw;
+	line-height: 8vw;
 	padding-top: 1vw;
 	padding-bottom: 1vw;
 	grid-column: ${(props) => {
@@ -48,8 +48,8 @@ const Rank = styled.div`
 
 const Data = styled.div`
 	font-family: 'Gudea', sans-serif;
-	font-size: 5vw;
-	font-weight: bold;
+	font-size: 5.5vw;
+	font-weight: 900;
 	align-self: center;
 	vertical-align: middle;
 	text-align: center;
@@ -57,7 +57,6 @@ const Data = styled.div`
 	padding-top: 1vw;
 	padding-bottom: 1vw;
 	height: 10vw;
-	color: #595e60;
 	background-color: ${(props) => {
 		if (props.leading) {
 			return props.color

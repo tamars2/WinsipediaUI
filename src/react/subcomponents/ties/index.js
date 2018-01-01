@@ -22,7 +22,7 @@ font-weight: bold;
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: 40% 60%;
+grid-template-columns: 50% 50%;
 grid-template-rows: 3vw 3vw 6vw;
 color: #595e60;
 font-family: 'Gudea', sans-serif;

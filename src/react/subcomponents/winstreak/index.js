@@ -34,6 +34,7 @@ grid-row-end: 2;
 grid-column: 1;		
 font-size: 4vw;
 text-align: center;
+font-weight: 900;
 align-self: center;
 font-family: 'Gudea', sans-serif;
 color: ${

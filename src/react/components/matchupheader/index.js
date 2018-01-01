@@ -10,8 +10,8 @@ import { DottedLine } from '../../subcomponents/';
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: 17% 1fr 1fr 1fr 17%;
-grid-template-rows: 100% 100% 100% 100% 100%;
+grid-template-columns: 17% 1fr 34% 1fr 17%;
+grid-template-rows: 100% 100% 100% 100% 17vw;
 `;
 
 const SchoolLogoPosition = styled.div`
@@ -161,7 +161,7 @@ export class MatchupHeader extends Component {
 					{this.loadWinStreak()}
 				</WinStreakPosition>
 				<DottedLinePosition>
-					<DottedLine bold/>
+					<DottedLine/>
 				</DottedLinePosition>
 				</Wrapper>
 			)

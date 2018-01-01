@@ -143,8 +143,6 @@ export class Matchup extends Component {
 	render() {
 		return (
       <div>
-        <style>@import url('https://fonts.googleapis.com/css?family=Ultra')</style>
-        <style>@import url('https://fonts.googleapis.com/css?family=Gudea')</style>
         {this.loadMatchup()}
       </div>
 		)
