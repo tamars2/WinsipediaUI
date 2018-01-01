@@ -4,9 +4,9 @@ import styled from "styled-components";
 const TeamLogos = styled.img`
 	align-self: center;
 	display: block;
-	width: 20vw;
-  margin-right: 1vw;
-  margin-left: 1vw;
+	width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 1vw;
 
 `

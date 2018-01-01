@@ -10,14 +10,14 @@ import { DottedLine } from '../../subcomponents/';
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+grid-template-columns: 17% 1fr 1fr 1fr 17%;
 grid-template-rows: 100% 100% 100% 100% 100%;
 `;
 
 const SchoolLogoPosition = styled.div`
 grid-row-start: 1;
 grid-row-end: 3;
-grid-column: 1;		
+grid-column: 1;
 align-self: center;
 `;
 
@@ -38,7 +38,7 @@ align-self: center;
 const MatchupSchoolWinsPosition = styled.div`
 grid-row-start: 1;
 grid-row-end: 3;
-grid-column: 4;			
+grid-column: 4;	
 align-self: center;
 `;
 
