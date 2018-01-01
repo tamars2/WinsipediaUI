@@ -18,6 +18,39 @@ export class Matchup extends Component {
         Branding {
           HexColor
         }
+        Matchup {
+          Wins
+          Ties
+          Losses
+          WinStreakLength
+          WinStreakEndYear
+          WinStreakStartYear
+          WinPercent
+          MatchupTeam {
+            SchoolName
+            Branding {
+              HexColor
+            }
+            Matchup {
+              Wins
+              WinPercent
+              WinStreakLength
+              WinStreakEndYear
+              WinStreakStartYear
+            }
+          }
+        }
+      }
+    }`;
+
+    const getMatchupVerbose = gql`query Team($schoolSlug: String!,$matchupSchoolSlug: String!){
+      team(School: $schoolSlug, Matchup: $matchupSchoolSlug) {
+        SchoolName
+        SchoolSlug
+        MatchupSlug
+        Branding {
+          HexColor
+        }
         AllTimeRankings {
           AllTimeRecordPercent
           AllTimeRecordRank
@@ -66,7 +99,6 @@ export class Matchup extends Component {
         }
       }
     }`;
-    
     const MyComponentWithData = graphql(getMatchup, {
       options: { 
         variables: { 
@@ -81,7 +113,7 @@ export class Matchup extends Component {
 
     );
 
-    const MyComponentWithDataVerbose = graphql(getMatchup, {
+    const MyComponentWithDataVerbose = graphql(getMatchupVerbose, {
       options: { 
         variables: { 
           schoolSlug: this.props.schoolSlug,
@@ -95,7 +127,6 @@ export class Matchup extends Component {
           </ViewContainerFrame>
 
     );
-    console.log(this.props.verbose)
     if (this.props.verbose === "true") {
       return (
         <MyComponentWithDataVerbose>
