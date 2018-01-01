@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
 display: grid;
-grid-template-columns: 50% 50%;
+grid-template-columns: 35% 65%;
 grid-template-rows: 3vw 3vw 6vw;
 color: #595e60;
 `;
@@ -51,7 +51,7 @@ export class Wins extends Component {
   formatPercent() {
     if (this.props.percent==="1.000" || this.props.percent==="0.000") {
       return (
-        this.props.percent
+        "(" + this.props.percent + ")"
       )
     }
     else {
