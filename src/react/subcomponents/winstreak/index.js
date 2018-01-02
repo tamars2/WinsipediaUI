@@ -67,7 +67,6 @@ formatYears() {
     return ("(" + this.props.winStreakYears + ")")
   }
   else {
-    console.log(this.props.winStreakYears.substring(5, 9))
     return "(" + (this.props.winStreakYears.substring(5, 9)) + ")"
   }
 }
