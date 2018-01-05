@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import { Component } from 'react'
+import styled from "styled-components"
 
 import { DottedLine } from '../../subcomponents/';
 import { MatchupBodyRow } from '../../subcomponents/';
@@ -15,7 +15,7 @@ export class MatchupBody extends Component {
 			this.formatPercent = this.formatPercent.bind(this)
 
 		}
-		
+
 		formatPercent(percent) {
 			if (percent==="1.000" || percent==="0.000") {
 				return (
