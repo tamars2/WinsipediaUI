@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
 const Wrapper = styled.div`
 	display: grid;
@@ -50,23 +50,43 @@ margin-right: 1px;
 export class WinLossBar extends Component {
 	
 	componentWillMount(){
-		let totalGames = (this.props.schoolWins + this.props.ties + this.props.matchupWins)
+		const {
+			schoolWins,
+			ties,
+			matchupWins,
+			schoolColor,
+			matchupSchoolColor,
+		} = this.props
+
+		const totalGames = (schoolWins + ties + matchupWins)
 		
 		this.setState({
-			schoolWinPercent: (this.props.schoolWins / totalGames)*100,
-			TiesPercent: (this.props.ties / totalGames)*100,
-			matchupSchoolWinPercent: (this.props.matchupWins / totalGames)*100,
-			schoolColor: this.props.schoolColor,
-			matchupSchoolColor: this.props.matchupSchoolColor,
-		});
+			schoolWinPercent: (schoolWins / totalGames)*100,
+			TiesPercent: (ties / totalGames)*100,
+			matchupSchoolWinPercent: (matchupWins / totalGames)*100,
+			schoolColor: schoolColor,
+			matchupSchoolColor: matchupSchoolColor,
+		})
 	}  
 
   render() {
+	const {
+		schoolWinPercent,
+		TiesPercent,
+		matchupSchoolWinPercent,
+		schoolColor,
+		matchupSchoolColor,
+	} = this.state
+
     return (
-			<Wrapper schoolWinPercent={this.state.schoolWinPercent} tiesPercent = {this.state.TiesPercent} matchupSchoolWinPercent = {this.state.matchupSchoolWinPercent}>
-				<SchoolWins schoolColor={this.state.schoolColor}></SchoolWins>
+			<Wrapper
+				schoolWinPercent={schoolWinPercent}
+				tiesPercent={TiesPercent}
+				matchupSchoolWinPercent={matchupSchoolWinPercent}
+			>
+				<SchoolWins schoolColor={schoolColor}></SchoolWins>
 				<Ties/>
-				<MatchupSchoolWins matchupSchoolColor={this.state.matchupSchoolColor}></MatchupSchoolWins>
+				<MatchupSchoolWins matchupSchoolColor={matchupSchoolColor}></MatchupSchoolWins>
 			</Wrapper>
     )
   }

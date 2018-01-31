@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
+import React, { Component } from 'react'
+import { graphql } from 'react-apollo'
+import gql from 'graphql-tag'
 
-import { ViewContainerFrame } from '../../components';
-import { MatchupHeader } from '../../components';
-import { MatchupFooter } from '../../components';
-import { MatchupBody } from '../../components';
+import { ViewContainerFrame } from '../../components'
+import { MatchupHeader } from '../../components'
+import { MatchupFooter } from '../../components'
+import { MatchupBody } from '../../components'
 
 
 export class Matchup extends Component {
@@ -107,8 +107,8 @@ export class Matchup extends Component {
          } },
     })(props => 
           <ViewContainerFrame>
-            <MatchupHeader matchUpData = {props}/>
-            <MatchupFooter matchUpData = {props}/>
+            <MatchupHeader matchUpData={props}/>
+            <MatchupFooter matchUpData={props}/>
           </ViewContainerFrame>
 
     );
@@ -121,13 +121,13 @@ export class Matchup extends Component {
          } },
     })(props => 
           <ViewContainerFrame>
-            <MatchupHeader matchUpData = {props}/>
-            <MatchupBody matchUpData = {props}/>
-            <MatchupFooter matchUpData = {props}/>
+            <MatchupHeader matchUpData={props}/>
+            <MatchupBody matchUpData={props}/>
+            <MatchupFooter matchUpData={props}/>
           </ViewContainerFrame>
 
     );
-    if (this.props.verbose === "true") {
+    if (this.props.verbose === 'true') {
       return (
         <MyComponentWithDataVerbose>
         </MyComponentWithDataVerbose>
@@ -148,4 +148,3 @@ export class Matchup extends Component {
 		)
 	}
 }
-

@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
-import { TeamLogo } from '../../subcomponents/';
-import { Ties } from '../../subcomponents/';
-import { Wins } from '../../subcomponents/';
-import {WinLossBar} from '../../subcomponents/';
-import {WinStreak} from '../../subcomponents/';
-import { DottedLine } from '../../subcomponents/';
+import { TeamLogo } from '../../subcomponents/'
+import { Ties } from '../../subcomponents/'
+import { Wins } from '../../subcomponents/'
+import { WinLossBar } from '../../subcomponents/'
+import { WinStreak } from '../../subcomponents/'
+import { DottedLine } from '../../subcomponents/'
 
 const Wrapper = styled.div`
 
@@ -104,31 +104,33 @@ margin: 0 auto;
 
 export class MatchupHeader extends Component {
 	constructor(props) {
-			super(props)
-			this.loadHeader = this.loadHeader.bind(this)
-			this.loadWinStreak = this.loadWinStreak.bind(this)
+		super(props)
+		this.loadHeader = this.loadHeader.bind(this)
+		this.loadWinStreak = this.loadWinStreak.bind(this)
 
 	}
 	loadWinStreak() {
-		if (this.props.matchUpData.data.team.Matchup.WinStreakEndYear > this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
-			let winStreakYears = this.props.matchUpData.data.team.Matchup.WinStreakStartYear.concat("-", this.props.matchUpData.data.team.Matchup.WinStreakEndYear)
+		const { matchUpData } = this.props
+		
+		if (matchUpData.data.team.Matchup.WinStreakEndYear > matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
+			let winStreakYears = matchUpData.data.team.Matchup.WinStreakStartYear.concat("-", matchUpData.data.team.Matchup.WinStreakEndYear)
 			return (
 				<WinStreak
-					winStreak={this.props.matchUpData.data.team.Matchup.WinStreakLength} 
-					winStreakSchool={this.props.matchUpData.data.team.SchoolName} 
+					winStreak={matchUpData.data.team.Matchup.WinStreakLength} 
+					winStreakSchool={matchUpData.data.team.SchoolName} 
 					winStreakYears={winStreakYears} 
-					winStreakSchoolColor={this.props.matchUpData.data.team.Branding.HexColor}                
+					winStreakSchoolColor={matchUpData.data.team.Branding.HexColor}                
 				/>
 			)
 		}
-		else  if (this.props.matchUpData.data.team.Matchup.WinStreakEndYear < this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
-			let winStreakYears = this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakStartYear.concat("-", this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear)
+		else  if (matchUpData.data.team.Matchup.WinStreakEndYear < matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear) {
+			let winStreakYears = matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakStartYear.concat("-", matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakEndYear)
 			return (
 				<WinStreak
-					winStreak={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakLength} 
-					winStreakSchool={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName} 
+					winStreak={matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinStreakLength} 
+					winStreakSchool={matchUpData.data.team.Matchup.MatchupTeam.SchoolName} 
 					winStreakYears={winStreakYears} 
-					winStreakSchoolColor={this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor}                
+					winStreakSchoolColor={matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor}                
 				/>
 			)
 		}
@@ -139,59 +141,61 @@ export class MatchupHeader extends Component {
 		}
 	}
 	loadHeader() {
-		if (this.props.matchUpData.data.loading) {
+		const { matchUpData } = this.props
+
+		if (matchUpData.data.loading) {
 			return (
 				<Wrapper>
-				<Loading src={require("../../../media/images/loading.gif")} alt="loading">
-				</Loading>
+					<Loading src={require("../../../media/images/loading.gif")} alt="loading">
+					</Loading>
 				</Wrapper>
 			)
 		}
-		else if (typeof this.props.matchUpData.data.error === "undefined") {
-			if ((this.props.matchUpData.data.team.Matchup.Wins + this.props.matchUpData.data.team.Matchup.Ties + this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins) > 0)  {
+		else if (typeof matchUpData.data.error === "undefined") {
+			if ((matchUpData.data.team.Matchup.Wins + matchUpData.data.team.Matchup.Ties + matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins) > 0)  {
 				return (
 					<Wrapper>
 						<HeaderContent>
 						<SchoolLogoPosition>
 							<TeamLogo  
-								slug={this.props.matchUpData.data.team.SchoolSlug}
-								school={this.props.matchUpData.data.team.SchoolName}
+								slug={matchUpData.data.team.SchoolSlug}
+								school={matchUpData.data.team.SchoolName}
 							/>
 						</SchoolLogoPosition>
 						<SchoolWinsPosition>
 						<Wins 
-							wins={this.props.matchUpData.data.team.Matchup.Wins} 
-							percent={this.props.matchUpData.data.team.Matchup.WinPercent}
+							wins={matchUpData.data.team.Matchup.Wins} 
+							percent={matchUpData.data.team.Matchup.WinPercent}
 						/>
 						</SchoolWinsPosition>
 							<TiesPosition>
 								<Ties 
-									ties={this.props.matchUpData.data.team.Matchup.Ties}
+									ties={matchUpData.data.team.Matchup.Ties}
 								/>
 							</TiesPosition>
 						<MatchupSchoolWinsPosition>
 						<Wins 
-							wins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins} 
-							percent={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinPercent}
+							wins={matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins} 
+							percent={matchUpData.data.team.Matchup.MatchupTeam.Matchup.WinPercent}
 						/>
 						</MatchupSchoolWinsPosition>
 						<MatchupSchoolLogoPosition>
 							<TeamLogo 
-								slug={this.props.matchUpData.data.team.MatchupSlug}
-								school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
+								slug={matchUpData.data.team.MatchupSlug}
+								school={matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
 							/>
 						</MatchupSchoolLogoPosition>
 						<WinLossBarPosition>
 							<WinLossBar 
-								schoolColor={this.props.matchUpData.data.team.Branding.HexColor} 
-								matchupSchoolColor={this.props.matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} 
-								schoolWins={this.props.matchUpData.data.team.Matchup.Wins} 
-								ties={this.props.matchUpData.data.team.Matchup.Ties} 
-								matchupWins={this.props.matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins}
+								schoolColor={matchUpData.data.team.Branding.HexColor} 
+								matchupSchoolColor={matchUpData.data.team.Matchup.MatchupTeam.Branding.HexColor} 
+								schoolWins={matchUpData.data.team.Matchup.Wins} 
+								ties={matchUpData.data.team.Matchup.Ties} 
+								matchupWins={matchUpData.data.team.Matchup.MatchupTeam.Matchup.Wins}
 							/>
 						</WinLossBarPosition>
 						<WinStreakPosition>
-							{this.loadWinStreak()}
+							{ this.loadWinStreak() }
 						</WinStreakPosition>
 						</HeaderContent>
 						<DottedLine/>
@@ -204,15 +208,15 @@ export class MatchupHeader extends Component {
 						<NoMatchupHeaderContent>
 						<SchoolLogoPosition>
 							<TeamLogo  
-								slug={this.props.matchUpData.data.team.SchoolSlug}
-								school={this.props.matchUpData.data.team.SchoolName}
+								slug={matchUpData.data.team.SchoolSlug}
+								school={matchUpData.data.team.SchoolName}
 							/>
 						</SchoolLogoPosition>
 						<NoPreviousMatchups>NO PREVIOUS MATCHUPS</NoPreviousMatchups>
 						<MatchupSchoolLogoPosition>
 							<TeamLogo 
-								slug={this.props.matchUpData.data.team.MatchupSlug}
-								school={this.props.matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
+								slug={matchUpData.data.team.MatchupSlug}
+								school={matchUpData.data.team.Matchup.MatchupTeam.SchoolName}
 							/>
 						</MatchupSchoolLogoPosition>
 						</NoMatchupHeaderContent>
@@ -228,11 +232,11 @@ export class MatchupHeader extends Component {
 				</Wrapper>
 			)
 		}
-		
 	}
+
 	render() {
-    return (
-    <div>{this.loadHeader()}</div>
+		return (
+			<div> { this.loadHeader() } </div>
 		)
 	}
 }

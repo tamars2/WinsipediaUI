@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
 const ViewContainerBackgrounds = styled.div`
 	background: rgb(235,235,235);

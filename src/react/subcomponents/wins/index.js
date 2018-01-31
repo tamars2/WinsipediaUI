@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
 const Wrapper = styled.div`
 display: grid;
@@ -39,7 +39,6 @@ align: top;
 font-size: 3vw;
 font-family: 'Gudea', sans-serif;
 padding-left: 1vw;
-
 `;
 
 export class Wins extends Component {
@@ -49,14 +48,16 @@ export class Wins extends Component {
 }
 
   formatPercent() {
-    if (this.props.percent==="1.000" || this.props.percent==="0.000") {
+    const { percent } = this.props
+
+    if (percent === '1.000' || percent === '0.000') {
       return (
-        "(" + this.props.percent + ")"
+        "(" + percent + ")"
       )
     }
     else {
       return (
-        "(" + (this.props.percent).substring(1, 5) + ")"
+        "(" + (percent).substring(1, 5) + ")"
       )
     }
   }
@@ -70,5 +71,4 @@ export class Wins extends Component {
       </Wrapper>
     )
   }
-
 }
