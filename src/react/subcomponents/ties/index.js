@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
 const Label = styled.div`
 	grid-row-start: 1;
@@ -9,26 +9,26 @@ const Label = styled.div`
 	text-align: left;
   align-self: center;
   margin-left: 2px;
-`;
+`
 
 const Number = styled.div`
-grid-row-start: 1;
-grid-row-end: 3;
-grid-column: 1;		
-font-size: 6vw;
-text-align: right;
-align-self: center;
-font-weight: bold;
-margin-right: 2px;
-`;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column: 1;		
+  font-size: 6vw;
+  text-align: right;
+  align-self: center;
+  font-weight: bold;
+  margin-right: 2px;
+`
 
 const Wrapper = styled.div`
-display: grid;
-grid-template-columns: 50% 50%;
-grid-template-rows: 3vw 3vw 6vw;
-color: #595e60;
-font-family: 'Gudea', sans-serif;
-`;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 3vw 3vw 6vw;
+  color: #595e60;
+  font-family: 'Gudea', sans-serif;
+`
 
 export class Ties extends Component {
   render() {

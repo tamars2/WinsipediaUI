@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
 const DottedLines = styled.div`
 			border-bottom: dashed 1px #c3c3c3;
@@ -10,7 +10,7 @@ const DottedLines = styled.div`
 export class DottedLine extends Component {
   render() {
     return (
-			<DottedLines/>
+			<DottedLines />
     )
   }
 }

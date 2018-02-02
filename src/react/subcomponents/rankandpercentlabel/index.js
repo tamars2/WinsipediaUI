@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
 const Wrapper = styled.div`
 		text-align: center;
@@ -9,7 +9,6 @@ const Wrapper = styled.div`
 `
 
 export class RankAndPercentLabel extends Component {
-
   render() {
     return (
         <Wrapper>
@@ -17,5 +16,4 @@ export class RankAndPercentLabel extends Component {
 				</Wrapper>
     )
   }
-
 }

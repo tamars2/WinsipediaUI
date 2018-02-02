@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import styled from "styled-components";
+import React, { Component } from 'react'
+import styled from "styled-components"
 
-import { MatchupLink } from '../../subcomponents/';
-import { Wordmark } from '../../subcomponents/';
+import { MatchupLink } from '../../subcomponents/'
+import { Wordmark } from '../../subcomponents/'
 
 const Wrapper = styled.div`
 	display: grid;  
@@ -19,23 +19,26 @@ const Loading = styled.div`
 `
 export class MatchupFooter extends Component {
     constructor(props) {
-			super(props)
-			this.loadFooter = this.loadFooter.bind(this)
+		super(props)
+		this.loadFooter = this.loadFooter.bind(this)
     }
     
     loadFooter() {
-		if (this.props.matchUpData.data.loading) {
+		const { matchUpData } = this.props
+
+		if (matchUpData.data.loading) {
 			return (
 				<Wrapper>
 					<Loading></Loading>
 				</Wrapper>
 			)
 		}
-		else if (typeof this.props.matchUpData.data.error === "undefined") {
+		else if (typeof matchUpData.data.error === 'undefined') {
 			return (
 				<Wrapper>
-					<Wordmark/>
-					<MatchupLink schoolSlug={this.props.matchUpData.data.team.SchoolSlug} matchupSchoolSlug={this.props.matchUpData.data.team.MatchupSlug}/>
+					<Wordmark />
+					<MatchupLink schoolSlug={matchUpData.data.team.SchoolSlug}
+					matchupSchoolSlug={matchUpData.data.team.MatchupSlug}/>
 				</Wrapper>
 			)
 		}
@@ -48,8 +51,8 @@ export class MatchupFooter extends Component {
 		}
 		}
 	render() {
-    return (
-    <div>{this.loadFooter()}</div>
+		return (
+		<div> { this.loadFooter() } </div>
 		)
 	}
 }
